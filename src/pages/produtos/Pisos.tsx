@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { Reviews } from "@/components/Reviews";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -233,6 +234,7 @@ const Pisos = () => {
         </div>
       </section>
 
+        <Reviews />
         <Footer />
         <FloatingWhatsApp />
       </div>
