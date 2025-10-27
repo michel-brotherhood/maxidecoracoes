@@ -105,7 +105,7 @@ export const Contact = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setErrors({});
     
@@ -113,14 +113,18 @@ export const Contact = () => {
       contactSchema.parse(formData);
       setIsSubmitting(true);
       
-      setTimeout(() => {
-        setIsSubmitting(false);
-        toast({
-          title: "Mensagem enviada!",
-          description: "Entraremos em contato em breve.",
-        });
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      }, 1500);
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Recebemos sua mensagem e entraremos em contato em breve.",
+      });
+      setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
       if (error instanceof z.ZodError) {
         const newErrors: Record<string, string> = {};
@@ -130,7 +134,16 @@ export const Contact = () => {
           }
         });
         setErrors(newErrors);
+      } else {
+        console.error("Error sending email:", error);
+        toast({
+          variant: "destructive",
+          title: "Erro ao enviar mensagem",
+          description: "Por favor, tente novamente ou entre em contato por telefone.",
+        });
       }
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

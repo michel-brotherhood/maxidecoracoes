@@ -93,15 +93,16 @@ const Contato = () => {
     try {
       contactSchema.parse(formData);
 
-      const whatsappNumber = "5521262207554";
-      const message = `Olá! Meu nome é ${formData.name}.\n\nEmail: ${formData.email}\nTelefone: ${formData.phone}\n\nMensagem: ${formData.message}`;
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+      const { supabase } = await import("@/integrations/supabase/client");
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
 
-      window.open(whatsappUrl, "_blank");
+      if (error) throw error;
 
       toast({
-        title: "Redirecionando para o WhatsApp!",
-        description: "Você será direcionado para continuar a conversa.",
+        title: "Mensagem enviada com sucesso!",
+        description: "Recebemos sua mensagem e entraremos em contato em breve.",
       });
 
       setFormData({ name: "", email: "", phone: "", message: "" });
@@ -111,6 +112,13 @@ const Contato = () => {
           variant: "destructive",
           title: "Erro no formulário",
           description: error.issues[0].message,
+        });
+      } else {
+        console.error("Error sending email:", error);
+        toast({
+          variant: "destructive",
+          title: "Erro ao enviar mensagem",
+          description: "Por favor, tente novamente ou entre em contato por telefone.",
         });
       }
     } finally {
