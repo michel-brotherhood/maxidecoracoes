@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ShoppingBag } from "lucide-react";
-import heroImage from "@/assets/hero-interior.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 
 export const Hero = () => {
   return (
@@ -45,13 +45,17 @@ export const Hero = () => {
             </div>
           </div>
           
-          {/* Right Image */}
-          <div className="relative h-[300px] sm:h-[400px] lg:h-[600px] animate-fade-in order-1 lg:order-2">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-sm" />
-            <img
-              src={heroImage}
-              alt="Ambiente elegante decorado pela Maxi Decorações com cortinas sob medida, tecidos nobres e móveis sofisticados"
-              className="relative w-full h-full object-cover rounded-sm shadow-2xl"
+          {/* Right Video */}
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[600px] animate-fade-in order-1 lg:order-2 overflow-hidden rounded-sm shadow-2xl">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-sm z-10 pointer-events-none" />
+            <video
+              src={heroVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="relative w-full h-full object-cover"
+              aria-label="Vídeo mostrando produtos elegantes da Maxi Decorações: cortinas sob medida, tecidos nobres e decoração de interiores"
             />
           </div>
         </div>
