@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Sparkles, Heart, Target, TrendingUp } from "lucide-react";
 
@@ -134,6 +135,7 @@ const Sobre = () => {
       </section>
 
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };
