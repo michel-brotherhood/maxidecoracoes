@@ -36,6 +36,10 @@ const Tecidos = () => {
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/whatsapp-image-2024-08-20-at-08.15.50-AzG7gwaNbes6Ngrz.jpeg",
   ];
 
+  const additionalBrands = [
+    "Nazareth", "Fiama", "Corttex", "Daruj", "Branyl"
+  ];
+
   const brands = [
     { name: "Karsten", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=210,h=50,fit=crop/YBg4lPQqvZhrZpja/karsten-mePnbK5DB5tgKJEq.jpg" },
     { name: "Döhler", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=166,h=54,fit=crop/YBg4lPQqvZhrZpja/dohler-logo-A854EX28eyS9Pev4.jpg" },
@@ -77,7 +81,22 @@ const Tecidos = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Image Carousel */}
             <div className="space-y-6">
-              <Carousel className="w-full">
+              <Carousel className="w-full" opts={{ loop: true }} plugins={[
+                {
+                  name: "autoplay",
+                  options: { delay: 4000 },
+                  init: (embla) => {
+                    const autoplay = setInterval(() => {
+                      if (embla.canScrollNext()) {
+                        embla.scrollNext();
+                      } else {
+                        embla.scrollTo(0);
+                      }
+                    }, 4000);
+                    embla.on("destroy", () => clearInterval(autoplay));
+                  }
+                } as any
+              ]}>
                 <CarouselContent>
                   {images.map((image, index) => (
                     <CarouselItem key={index}>
@@ -98,12 +117,19 @@ const Tecidos = () => {
               {/* Brands */}
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Qualidade garantida por:</h3>
-                  <div className="grid grid-cols-3 gap-4 items-center">
+                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com as melhores marcas:</h3>
+                  <div className="grid grid-cols-3 gap-4 items-center mb-4">
                     {brands.map((brand, index) => (
                       <div key={index} className="flex items-center justify-center p-2 bg-secondary/50 rounded-lg">
                         <img src={brand.logo} alt={brand.name} className="max-h-12 w-auto object-contain" />
                       </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {additionalBrands.map((brand, index) => (
+                      <Badge key={index} variant="outline" className="text-xs">
+                        {brand}
+                      </Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -117,8 +143,11 @@ const Tecidos = () => {
                 <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
                   Tecidos
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  Nosso catálogo de tecidos oferece uma ampla gama de opções para paredes, estofados, cortinas, linhos e voil, com marcas renomadas como Karsten, Nazareth, Fiama, Corttex, Daruj e Döhler, Edantex, Branyl, conhecidas por sua qualidade e durabilidade. Além disso, temos tecidos especializados como AquaBlock, WaterBlock e AquaTec.
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  Nosso catálogo de tecidos oferece uma ampla gama de opções para paredes, estofados, cortinas, linhos e voil, com marcas renomadas como Karsten, Nazareth, Fiama, Corttex, Daruj e Döhler, Edantex, Branyl, conhecidas por sua qualidade e durabilidade.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Oferecemos tecidos especializados como <strong>AquaBlock</strong>, <strong>WaterBlock</strong> e <strong>AquaTec</strong>, ideais para ambientes que necessitam de proteção contra água e manchas. Nossa equipe especializada está pronta para auxiliar na escolha do tecido perfeito para cada projeto, seja para decoração, estofamento de móveis ou confecção de cortinas.
                 </p>
               </div>
 

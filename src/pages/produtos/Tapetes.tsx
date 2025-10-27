@@ -34,7 +34,10 @@ const Tapetes = () => {
   const images = [
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/vitale-edan-home-aplic-AE04MqM06rCpvOpq.jpg",
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/coliseo-edan-home-aplic-m6LJQvXoz2ibrzBp.webp",
+    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/andreiandreev__the_place_for_the_product_on_the_carpet_is_light_a8130300-00c8-4ad9-9a45-a9621de3b299-mp893ZDnZEUbkJKR.png"
   ];
+
+  const additionalBrands = ["Beaulieu"];
 
   const brands = [
     { name: "Tapetes São Carlos", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=184,h=60,fit=crop/YBg4lPQqvZhrZpja/images-1-AoPGqKZobPuoja2r.png" },
@@ -77,7 +80,22 @@ const Tapetes = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Image Carousel */}
             <div className="space-y-6">
-              <Carousel className="w-full">
+              <Carousel className="w-full" opts={{ loop: true }} plugins={[
+                {
+                  name: "autoplay",
+                  options: { delay: 4000 },
+                  init: (embla) => {
+                    const autoplay = setInterval(() => {
+                      if (embla.canScrollNext()) {
+                        embla.scrollNext();
+                      } else {
+                        embla.scrollTo(0);
+                      }
+                    }, 4000);
+                    embla.on("destroy", () => clearInterval(autoplay));
+                  }
+                } as any
+              ]}>
                 <CarouselContent>
                   {images.map((image, index) => (
                     <CarouselItem key={index}>
@@ -98,12 +116,19 @@ const Tapetes = () => {
               {/* Brands */}
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Qualidade garantida por:</h3>
-                  <div className="grid grid-cols-3 gap-4 items-center">
+                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com as melhores marcas:</h3>
+                  <div className="grid grid-cols-3 gap-4 items-center mb-4">
                     {brands.map((brand, index) => (
                       <div key={index} className="flex items-center justify-center p-2 bg-secondary/50 rounded-lg">
                         <img src={brand.logo} alt={brand.name} className="max-h-12 w-auto object-contain" />
                       </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {additionalBrands.map((brand, index) => (
+                      <Badge key={index} variant="outline" className="text-xs">
+                        {brand}
+                      </Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -117,8 +142,11 @@ const Tapetes = () => {
                 <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
                   Tapetes
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                  A Maxi Decorações oferece uma ampla variedade de tapetes para uso residencial e comercial, nacionais e importados. Fornecidos por renomadas marcas como Tapetes São Carlos, Edantex e Niazitex. Fabricados com métodos ecologicamente sustentáveis, nossos tapetes são perfeitos para qualquer ambiente, proporcionando conforto, estilo e durabilidade.
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+                  A Maxi Decorações oferece uma ampla variedade de tapetes para uso residencial e comercial, nacionais e importados. Fornecidos por renomadas marcas como Tapetes São Carlos, Edantex e Niazitex.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Fabricados com <strong>métodos ecologicamente sustentáveis</strong>, nossos tapetes são perfeitos para qualquer ambiente, proporcionando conforto, estilo e durabilidade. Oferecemos também <strong>carpetes para uso comercial e residencial</strong>, com colas e acessórios de qualidade. Carpetes finos ideais para cenários também disponíveis.
                 </p>
               </div>
 

@@ -32,7 +32,10 @@ const PapeisDeParede = () => {
     }
   };
 
-  const images = [wallpaperImage];
+  const images = [
+    wallpaperImage,
+    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/persiana-horizontal-YNqrO0B2Ejh9npp3.webp"
+  ];
 
   const features = [
     "Aplicação profissional",
@@ -69,7 +72,22 @@ const PapeisDeParede = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Image Carousel */}
             <div className="space-y-6">
-              <Carousel className="w-full">
+              <Carousel className="w-full" opts={{ loop: true }} plugins={[
+                {
+                  name: "autoplay",
+                  options: { delay: 4000 },
+                  init: (embla) => {
+                    const autoplay = setInterval(() => {
+                      if (embla.canScrollNext()) {
+                        embla.scrollNext();
+                      } else {
+                        embla.scrollTo(0);
+                      }
+                    }, 4000);
+                    embla.on("destroy", () => clearInterval(autoplay));
+                  }
+                } as any
+              ]}>
                 <CarouselContent>
                   {images.map((image, index) => (
                     <CarouselItem key={index}>
@@ -95,8 +113,11 @@ const PapeisDeParede = () => {
                 <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
                   Papéis de Parede
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   Papéis de parede modernos, clássicos e texturizados. Aplicação profissional para resultado perfeito. Transforme seus ambientes com estilo e sofisticação.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Trabalhamos com <strong>coleções exclusivas</strong> de papéis importados e nacionais, oferecendo diversos padrões, texturas e estilos. Nossa equipe realiza a <strong>aplicação profissional</strong>, garantindo acabamento impecável e durabilidade. Ideal para renovar ambientes residenciais e comerciais com elegância e personalidade.
                 </p>
               </div>
 

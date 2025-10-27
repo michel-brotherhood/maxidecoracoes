@@ -32,7 +32,10 @@ const Cortinas = () => {
     }
   };
 
-  const images = [curtainsImage];
+  const images = [
+    curtainsImage,
+    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/robinswell_zara_home_style_beige_and_white_brightenvironment_of_5584eeee-8a4e-4d87-955e-4029f499e069-AGB4M8wO76iwkqpZ.png"
+  ];
 
   const brands = [
     "MAXI Ateliê Cortinas",
@@ -76,7 +79,22 @@ const Cortinas = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Image Carousel */}
             <div className="space-y-6">
-              <Carousel className="w-full">
+              <Carousel className="w-full" opts={{ loop: true }} plugins={[
+                {
+                  name: "autoplay",
+                  options: { delay: 4000 },
+                  init: (embla) => {
+                    const autoplay = setInterval(() => {
+                      if (embla.canScrollNext()) {
+                        embla.scrollNext();
+                      } else {
+                        embla.scrollTo(0);
+                      }
+                    }, 4000);
+                    embla.on("destroy", () => clearInterval(autoplay));
+                  }
+                } as any
+              ]}>
                 <CarouselContent>
                   {images.map((image, index) => (
                     <CarouselItem key={index}>
@@ -97,7 +115,7 @@ const Cortinas = () => {
               {/* Brands */}
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Qualidade garantida por:</h3>
+                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com:</h3>
                   <div className="flex flex-wrap gap-2">
                     {brands.map((brand, index) => (
                       <Badge key={index} variant="secondary">
@@ -116,8 +134,11 @@ const Cortinas = () => {
                 <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
                   Cortinas & Persianas
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   Oferecemos persianas e cortinas sob medida, além de cortinas prontas. Nosso ateliê próprio combina funcionalidade e design elegante, garantindo produtos de alta qualidade.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Com <strong>medição gratuita</strong> e <strong>instalação profissional</strong>, trabalhamos com as melhores marcas como MAXI Ateliê Cortinas, Gabriel Persianas e Trilho Suisso. Oferecemos opções de automação para maior comodidade. Cada projeto é único e recebe atenção especial da nossa equipe especializada.
                 </p>
               </div>
 

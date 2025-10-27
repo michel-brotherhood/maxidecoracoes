@@ -32,7 +32,10 @@ const CamaMesaBanho = () => {
     }
   };
 
-  const images = [textilesImage];
+  const images = [
+    textilesImage,
+    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/monsieuria_your_design_here_white_heart-shaped_cushion_mockup_o_9515bb1d-3922-4c03-9914-84e13dcff29a-1-Yg29LnR0znhrkP5d.png"
+  ];
 
   const features = [
     "Tecidos de alta qualidade",
@@ -69,7 +72,22 @@ const CamaMesaBanho = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Image Carousel */}
             <div className="space-y-6">
-              <Carousel className="w-full">
+              <Carousel className="w-full" opts={{ loop: true }} plugins={[
+                {
+                  name: "autoplay",
+                  options: { delay: 4000 },
+                  init: (embla) => {
+                    const autoplay = setInterval(() => {
+                      if (embla.canScrollNext()) {
+                        embla.scrollNext();
+                      } else {
+                        embla.scrollTo(0);
+                      }
+                    }, 4000);
+                    embla.on("destroy", () => clearInterval(autoplay));
+                  }
+                } as any
+              ]}>
                 <CarouselContent>
                   {images.map((image, index) => (
                     <CarouselItem key={index}>
@@ -95,8 +113,11 @@ const CamaMesaBanho = () => {
                 <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
                   Cama Mesa & Banho
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   Roupa de cama, toalhas de banho, toalhas de mesa e acessórios de alta qualidade para seu conforto. Produtos cuidadosamente selecionados para proporcionar bem-estar e elegância ao seu lar.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Oferecemos produtos diferenciados e atualizados, incluindo <strong>lençóis de até 1000 fios</strong>, edredons e cobre-leitos de marcas renomadas. <strong>Enxovais completos</strong> disponíveis, perfeitos para presentes ou para renovar seu lar com sofisticação e conforto. Diversas cores, padrões e tamanhos para atender todas as necessidades.
                 </p>
               </div>
 

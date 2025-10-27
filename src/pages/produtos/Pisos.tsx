@@ -33,7 +33,10 @@ const Pisos = () => {
 
   const images = [
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/164964-1600-1600-YX4bePRjjETe6oO1.webp",
+    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/piso-laminado-cred-istock_miljanzivkovic-A8542ODV2NH43jLV.jpg"
   ];
+
+  const additionalBrands = ["Finottato"];
 
   const brands = [
     { name: "Eucatex", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=171,h=49,fit=crop/YBg4lPQqvZhrZpja/images-2-mk39qK8oJRHqQwn4.png" },
@@ -76,7 +79,22 @@ const Pisos = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Image Carousel */}
             <div className="space-y-6">
-              <Carousel className="w-full">
+              <Carousel className="w-full" opts={{ loop: true }} plugins={[
+                {
+                  name: "autoplay",
+                  options: { delay: 4000 },
+                  init: (embla) => {
+                    const autoplay = setInterval(() => {
+                      if (embla.canScrollNext()) {
+                        embla.scrollNext();
+                      } else {
+                        embla.scrollTo(0);
+                      }
+                    }, 4000);
+                    embla.on("destroy", () => clearInterval(autoplay));
+                  }
+                } as any
+              ]}>
                 <CarouselContent>
                   {images.map((image, index) => (
                     <CarouselItem key={index}>
@@ -97,12 +115,19 @@ const Pisos = () => {
               {/* Brands */}
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Qualidade garantida por:</h3>
-                  <div className="grid grid-cols-3 gap-4 items-center">
+                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com as melhores marcas:</h3>
+                  <div className="grid grid-cols-3 gap-4 items-center mb-4">
                     {brands.map((brand, index) => (
                       <div key={index} className="flex items-center justify-center p-2 bg-secondary/50 rounded-lg">
                         <img src={brand.logo} alt={brand.name} className="max-h-12 w-auto object-contain" />
                       </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {additionalBrands.map((brand, index) => (
+                      <Badge key={index} variant="outline" className="text-xs">
+                        {brand}
+                      </Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -116,8 +141,11 @@ const Pisos = () => {
                 <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
                   Pisos
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   Oferecemos uma variedade de pisos vinílicos, laminados, hospitalares, para academias e escolas. Todos fabricados com materiais sustentáveis por marcas como Finottato, Durafloor, Eucatex, Tarkett.
+                </p>
+                <p className="text-base text-muted-foreground leading-relaxed">
+                  Nossos pisos são ideais para uso <strong>comercial e residencial</strong>, com <strong>instalação rápida e sem obras</strong>. São produtos duráveis, de fácil manutenção e disponíveis em diversas texturas e padrões. Nossa equipe oferece consultoria especializada para ajudar na escolha do piso ideal para cada ambiente.
                 </p>
               </div>
 

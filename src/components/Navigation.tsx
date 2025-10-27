@@ -15,32 +15,32 @@ import logoMaxi from "@/assets/logo-maxi.svg";
 const products = [
   {
     title: "Tecidos & Estofados",
-    href: "/produtos",
+    href: "/produtos/tecidos",
     description: "Tecidos nobres para decoração e estofamento",
   },
   {
     title: "Cortinas & Persianas",
-    href: "/produtos",
+    href: "/produtos/cortinas",
     description: "Soluções elegantes em cortinas e persianas",
   },
   {
     title: "Pisos & Revestimentos",
-    href: "/produtos",
+    href: "/produtos/pisos",
     description: "Pisos vinílicos, laminados e porcelanatos",
   },
   {
     title: "Tapetes & Carpetes",
-    href: "/produtos",
+    href: "/produtos/tapetes",
     description: "Tapetes decorativos e carpetes de alta qualidade",
   },
   {
     title: "Papéis de Parede",
-    href: "/produtos",
+    href: "/produtos/papeis-de-parede",
     description: "Papéis de parede modernos e clássicos",
   },
   {
     title: "Cama Mesa & Banho",
-    href: "/produtos",
+    href: "/produtos/cama-mesa-banho",
     description: "Roupa de cama, toalhas e acessórios",
   },
 ];
