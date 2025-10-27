@@ -13,6 +13,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone, FileText } from "lucide-react";
+import finottatoLogo from "@/assets/finottato-logo.webp";
 
 const Pisos = () => {
   const structuredData = {
@@ -36,12 +37,11 @@ const Pisos = () => {
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/piso-laminado-cred-istock_miljanzivkovic-A8542ODV2NH43jLV.jpg"
   ];
 
-  const additionalBrands = ["Finottato"];
-
   const brands = [
     { name: "Eucatex", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=171,h=49,fit=crop/YBg4lPQqvZhrZpja/images-2-mk39qK8oJRHqQwn4.png" },
     { name: "Durafloor", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=218,h=48,fit=crop/YBg4lPQqvZhrZpja/images-3-dOq48glJOouQM6r7.png" },
     { name: "Tarkett", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=203,h=43,fit=crop/YBg4lPQqvZhrZpja/images-AR0bMg2XJQc7JvN5.png" },
+    { name: "Finottato", logo: finottatoLogo },
   ];
 
   const features = [
@@ -116,18 +116,11 @@ const Pisos = () => {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com as melhores marcas:</h3>
-                  <div className="grid grid-cols-3 gap-4 items-center mb-4">
+                  <div className="grid grid-cols-2 gap-4 items-center">
                     {brands.map((brand, index) => (
                       <div key={index} className="flex items-center justify-center p-2 bg-secondary/50 rounded-lg">
                         <img src={brand.logo} alt={brand.name} className="max-h-12 w-auto object-contain" />
                       </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {additionalBrands.map((brand, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {brand}
-                      </Badge>
                     ))}
                   </div>
                 </CardContent>
