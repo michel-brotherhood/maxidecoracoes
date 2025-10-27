@@ -12,7 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Check, Phone } from "lucide-react";
+import { Check, Phone, FileText } from "lucide-react";
 
 const Pisos = () => {
   const structuredData = {
@@ -174,6 +174,31 @@ const Pisos = () => {
                         {product}
                       </Badge>
                     ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Catalogs */}
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-4">Catálogos</h3>
+                  <div className="space-y-2">
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start"
+                      onClick={() => window.open('https://assets.zyrosite.com/YBg4lPQqvZhrZpja/eucafloor-Aq2oBEzz6lCqlLVq.pdf', '_blank')}
+                    >
+                      <FileText className="w-4 h-4 mr-2" />
+                      Eucatex - Pisos Laminados
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start"
+                      onClick={() => window.open('https://assets.zyrosite.com/YBg4lPQqvZhrZpja/4882-catalogo-eucafloor-lvt-es-m7VKpl2N9EIXngBX.pdf', '_blank')}
+                    >
+                      <FileText className="w-4 h-4 mr-2" />
+                      Eucatex - Pisos Vinílicos LVT
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

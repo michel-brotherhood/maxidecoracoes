@@ -12,7 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Check, Phone } from "lucide-react";
+import { Check, Phone, FileText } from "lucide-react";
 
 const Tecidos = () => {
   const structuredData = {
@@ -177,6 +177,21 @@ const Tecidos = () => {
                       </Badge>
                     ))}
                   </div>
+                </CardContent>
+              </Card>
+
+              {/* Catalogs */}
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-4">Catálogos</h3>
+                  <Button 
+                    variant="outline" 
+                    className="w-full justify-start"
+                    onClick={() => window.open('https://assets.zyrosite.com/YBg4lPQqvZhrZpja/ecotec-24-A1aJKZ9y6KtpL1jg.pdf', '_blank')}
+                  >
+                    <FileText className="w-4 h-4 mr-2" />
+                    Catálogo EcoTec - Fiama Tecidos 2024
+                  </Button>
                 </CardContent>
               </Card>
 

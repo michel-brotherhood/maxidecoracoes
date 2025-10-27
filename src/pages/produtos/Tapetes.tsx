@@ -12,7 +12,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Check, Phone } from "lucide-react";
+import { Check, Phone, FileText } from "lucide-react";
 
 const Tapetes = () => {
   const structuredData = {
@@ -175,6 +175,31 @@ const Tapetes = () => {
                         {product}
                       </Badge>
                     ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Catalogs */}
+              <Card>
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-4">Catálogos</h3>
+                  <div className="space-y-2">
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start"
+                      onClick={() => window.open('https://assets.zyrosite.com/YBg4lPQqvZhrZpja/tapetes-202024-tapetes-s-c3-a3o-carlos-m2WQ43Jv24I0galD.pdf', '_blank')}
+                    >
+                      <FileText className="w-4 h-4 mr-2" />
+                      Catálogo São Carlos - Tapetes 2024
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      className="w-full justify-start"
+                      onClick={() => window.open('https://assets.zyrosite.com/YBg4lPQqvZhrZpja/1719867750826catalogo-20de-20carpetes-202024-20-20tapetes-20s-c3-a3o-20carlos-m7VKpO7raGFkaz1l.pdf', '_blank')}
+                    >
+                      <FileText className="w-4 h-4 mr-2" />
+                      Catálogo São Carlos - Carpetes 2024
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
