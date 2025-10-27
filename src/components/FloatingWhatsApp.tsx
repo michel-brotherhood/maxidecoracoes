@@ -52,19 +52,14 @@ export const FloatingWhatsApp = () => {
     <>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-br from-[#25D366] to-[#128C7E] hover:from-[#20BA5A] hover:to-[#0F7A6C] text-white rounded-full flex items-center justify-center shadow-2xl hover:shadow-[0_10px_40px_rgba(37,211,102,0.4)] transition-all duration-300 animate-[pulse_10s_ease-in-out_infinite] hover:animate-none hover:scale-110 group"
+        className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-br from-[#25D366] to-[#128C7E] hover:from-[#20BA5A] hover:to-[#0F7A6C] text-white rounded-full flex items-center justify-center shadow-2xl hover:shadow-[0_10px_40px_rgba(37,211,102,0.4)] transition-all duration-300 hover:scale-110 group"
         aria-label="Abrir menu WhatsApp"
       >
-        <div className="relative">
-          {isOpen ? (
-            <X className="w-7 h-7 transition-transform group-hover:rotate-90 duration-300" />
-          ) : (
-            <>
-              <MessageCircle className="w-7 h-7 group-hover:scale-110 transition-transform" />
-              <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full ring-2 ring-white animate-pulse" />
-            </>
-          )}
-        </div>
+        {isOpen ? (
+          <X className="w-7 h-7 transition-transform group-hover:rotate-90 duration-300" />
+        ) : (
+          <MessageCircle className="w-7 h-7 group-hover:scale-110 transition-transform" />
+        )}
       </button>
 
       {isOpen && (
