@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,22 @@ import {
 import { Check, Phone } from "lucide-react";
 
 const Tapetes = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Tapetes Decorativos e Carpetes",
+    "description": "Tapetes residenciais e comerciais, nacionais e importados. Marcas São Carlos, Edantex, Niazitex. Métodos sustentáveis",
+    "brand": {
+      "@type": "Brand",
+      "name": "Maxi Decorações"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   const images = [
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/vitale-edan-home-aplic-AE04MqM06rCpvOpq.jpg",
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/coliseo-edan-home-aplic-m6LJQvXoz2ibrzBp.webp",
@@ -44,8 +61,16 @@ const Tapetes = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Tapetes Decorativos e Carpetes | São Carlos, Edantex - Maxi"
+        description="Tapetes decorativos para sala, quarto e comerciais. Carpetes residenciais. Marcas São Carlos, Edantex, Niazitex. Produção sustentável, instalação profissional no RJ."
+        keywords="tapetes decorativos, carpetes, tapetes sala, tapetes quarto, são carlos, edantex, tapetes rio de janeiro"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/tapetes"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,9 +171,10 @@ const Tapetes = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 

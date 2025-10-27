@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Sparkles, Heart, Target, TrendingUp } from "lucide-react";
 
@@ -38,9 +39,25 @@ const values = [
 ];
 
 const Sobre = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Sobre a Maxi Decorações",
+    "description": "Conheça nossa história: 30 anos de tradição em decoração de interiores, 6 lojas e mais de 5000 clientes atendidos",
+    "url": "https://maxi-decoracoes.lovable.app/sobre"
+  };
+
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Sobre a Maxi Decorações | 30 Anos em Decoração de Interiores"
+        description="30 anos de experiência em decoração. 6 lojas no Rio de Janeiro, 5000+ clientes atendidos. Conheça nossa história, missão, visão e valores em decoração de interiores premium."
+        keywords="sobre maxi decorações, história, empresa decoração, rio de janeiro, niterói, são gonçalo"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/sobre"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,9 +151,10 @@ const Sobre = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 

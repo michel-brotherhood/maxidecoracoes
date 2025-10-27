@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -77,6 +78,14 @@ const Contato = () => {
     message: "",
   });
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contato - Maxi Decorações",
+    "description": "Entre em contato com a Maxi Decorações. 6 lojas no RJ: Niterói, São Gonçalo e Tijuca. WhatsApp, email e formulário de contato",
+    "url": "https://maxi-decoracoes.lovable.app/contato"
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -110,8 +119,16 @@ const Contato = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Contato | Maxi Decorações - 6 Lojas no Rio de Janeiro"
+        description="Entre em contato com a Maxi Decorações. 6 lojas em Niterói, São Gonçalo e Tijuca. WhatsApp (21) 2622-0754. Atendimento especializado em decoração de interiores."
+        keywords="contato maxi decorações, lojas niterói, lojas são gonçalo, whatsapp decoração, endereço loja decoração rio de janeiro"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/contato"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
 
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -322,9 +339,10 @@ const Contato = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 

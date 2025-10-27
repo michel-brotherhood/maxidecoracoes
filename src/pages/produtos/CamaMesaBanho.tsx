@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +16,22 @@ import { Check, Phone } from "lucide-react";
 import textilesImage from "@/assets/products-textiles.jpg";
 
 const CamaMesaBanho = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Cama Mesa & Banho",
+    "description": "Roupa de cama, toalhas de banho e mesa, edredons, colchas. Enxovais completos de alta qualidade, marcas renomadas",
+    "brand": {
+      "@type": "Brand",
+      "name": "Maxi Decorações"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   const images = [textilesImage];
 
   const features = [
@@ -36,8 +53,16 @@ const CamaMesaBanho = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Cama Mesa & Banho | Enxovais e Toalhas de Alta Qualidade"
+        description="Roupa de cama, toalhas de banho, toalhas de mesa, edredons e colchas. Enxovais completos, marcas renomadas. Presente ideal com conforto e sofisticação no RJ."
+        keywords="roupa de cama, toalhas banho, toalhas mesa, enxoval, edredon, colcha, cama mesa banho, rio de janeiro"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/cama-mesa-banho"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,9 +149,10 @@ const CamaMesaBanho = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 

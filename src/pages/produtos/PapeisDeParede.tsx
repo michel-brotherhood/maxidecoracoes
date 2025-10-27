@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +16,22 @@ import { Check, Phone } from "lucide-react";
 import wallpaperImage from "@/assets/products-curtains.jpg";
 
 const PapeisDeParede = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Papéis de Parede Decorativos",
+    "description": "Papéis de parede modernos, clássicos, texturizados e 3D. Aplicação profissional, coleções exclusivas importadas e nacionais",
+    "brand": {
+      "@type": "Brand",
+      "name": "Maxi Decorações"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   const images = [wallpaperImage];
 
   const features = [
@@ -36,8 +53,16 @@ const PapeisDeParede = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Papéis de Parede Modernos e Clássicos | Aplicação Profissional"
+        description="Papéis de parede decorativos: vinílicos, texturizados, 3D, importados e autoadesivos. Aplicação profissional, coleções exclusivas. Consultoria de design no Rio de Janeiro."
+        keywords="papel de parede, papel vinílico, papel 3D, papel texturizado, papel importado, aplicação papel parede, rio de janeiro"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/papeis-de-parede"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,9 +149,10 @@ const PapeisDeParede = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 

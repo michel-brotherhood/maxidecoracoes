@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -100,10 +101,26 @@ const productCategories = [
 
 const Produtos = () => {
   const navigate = useNavigate();
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Produtos de Decoração - Maxi Decorações",
+    "description": "Catálogo completo: tecidos, cortinas, persianas, pisos, tapetes, papéis de parede e cama mesa banho",
+    "url": "https://maxi-decoracoes.lovable.app/produtos"
+  };
   
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Produtos para Decoração | Cortinas, Tecidos e Pisos - Maxi"
+        description="Catálogo completo de produtos para decoração: tecidos nobres, cortinas sob medida, persianas, pisos vinílicos, tapetes, papéis de parede e cama mesa banho. Qualidade premium."
+        keywords="catálogo decoração, produtos decoração, tecidos, cortinas, pisos, tapetes, papéis de parede"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 bg-gradient-to-b from-secondary/30 to-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,7 +143,7 @@ const Produtos = () => {
                 <div className="relative h-72 overflow-hidden">
                   <img
                     src={category.image}
-                    alt={`${category.title} - ${category.subtitle}`}
+                    alt={`${category.title} - ${category.description.substring(0, 80)} - Maxi Decorações`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -214,9 +231,10 @@ const Produtos = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 

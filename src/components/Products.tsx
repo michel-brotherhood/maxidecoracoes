@@ -108,7 +108,7 @@ export const Products = () => {
                   
                   <img
                     src={product.image}
-                    alt={product.title}
+                    alt={`${product.title} - ${product.description} - Maxi Decorações`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   

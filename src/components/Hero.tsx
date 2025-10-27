@@ -50,7 +50,7 @@ export const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-sm" />
             <img
               src={heroImage}
-              alt="Profissional em ambiente decorado"
+              alt="Ambiente elegante decorado pela Maxi Decorações com cortinas sob medida, tecidos nobres e móveis sofisticados"
               className="relative w-full h-full object-cover rounded-sm shadow-2xl"
             />
           </div>

@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,22 @@ import {
 import { Check, Phone } from "lucide-react";
 
 const Pisos = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Pisos Vinílicos e Laminados",
+    "description": "Pisos vinílicos, laminados, hospitalares e para academias. Marcas Eucatex, Durafloor, Tarkett. Instalação profissional",
+    "brand": {
+      "@type": "Brand",
+      "name": "Maxi Decorações"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   const images = [
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/164964-1600-1600-YX4bePRjjETe6oO1.webp",
   ];
@@ -43,8 +60,16 @@ const Pisos = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Pisos Vinílicos e Laminados | Eucatex, Durafloor - Maxi RJ"
+        description="Pisos vinílicos LVT, laminados, hospitalares e para academias. Marcas Eucatex, Durafloor, Tarkett. Materiais sustentáveis, instalação profissional no Rio de Janeiro."
+        keywords="piso vinílico, piso laminado, piso hospitalar, eucatex, durafloor, tarkett, pisos rio de janeiro"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/pisos"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,9 +170,10 @@ const Pisos = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 

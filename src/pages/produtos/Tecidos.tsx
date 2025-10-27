@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,22 @@ import {
 import { Check, Phone } from "lucide-react";
 
 const Tecidos = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Tecidos para Decoração e Estofamento",
+    "description": "Ampla variedade de tecidos nobres: decorativos, estofados, veludos, linhos, blackout. Marcas Karsten, Döhler, Edantex",
+    "brand": {
+      "@type": "Brand",
+      "name": "Maxi Decorações"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   const images = [
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop,trim=120.46204620462046;0;245.87458745874588;0/YBg4lPQqvZhrZpja/whatsapp-image-2024-08-20-at-08.14.08-mv07r6M2KMfZqOGQ.jpeg",
     "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/whatsapp-image-2024-08-20-at-08.15.50-AzG7gwaNbes6Ngrz.jpeg",
@@ -44,8 +61,16 @@ const Tecidos = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Tecidos para Decoração e Estofamento | Karsten, Döhler - Maxi"
+        description="Ampla variedade de tecidos nobres para decoração e estofamento: veludos, linhos, blackout, tecidos impermeáveis. Marcas Karsten, Döhler, Edantex. Consultoria especializada no RJ."
+        keywords="tecidos decoração, tecidos estofamento, veludo, linho, blackout, karsten, döhler, tecidos rio de janeiro"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/tecidos"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,9 +171,10 @@ const Tecidos = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 

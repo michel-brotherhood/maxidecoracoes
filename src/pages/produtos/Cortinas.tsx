@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -15,6 +16,22 @@ import { Check, Phone } from "lucide-react";
 import curtainsImage from "@/assets/products-curtains.jpg";
 
 const Cortinas = () => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Cortinas e Persianas Sob Medida",
+    "description": "Cortinas sob medida e persianas: ateliê próprio, medição e instalação gratuita. Blackout, rolô, horizontais e verticais",
+    "brand": {
+      "@type": "Brand",
+      "name": "Maxi Decorações"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "BRL",
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   const images = [curtainsImage];
 
   const brands = [
@@ -43,8 +60,16 @@ const Cortinas = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
+    <>
+      <SEO
+        title="Cortinas Sob Medida e Persianas | Ateliê Próprio - Maxi RJ"
+        description="Cortinas sob medida e persianas no RJ: ateliê próprio, medição gratuita, instalação profissional. Blackout, rolô, horizontais, verticais. Automação disponível. 30 anos de experiência."
+        keywords="cortinas sob medida, persianas, blackout, persianas rolô, cortinas rio de janeiro, trilho suisso, automação cortinas"
+        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/cortinas"
+        structuredData={structuredData}
+      />
+      <div className="min-h-screen">
+        <Navigation />
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -145,9 +170,10 @@ const Cortinas = () => {
         </div>
       </section>
 
-      <Footer />
-      <FloatingWhatsApp />
-    </div>
+        <Footer />
+        <FloatingWhatsApp />
+      </div>
+    </>
   );
 };
 
