@@ -4,11 +4,11 @@ import heroImage from "@/assets/hero-interior.jpg";
 
 export const Hero = () => {
   return (
-    <section id="inicio" className="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background pt-20 lg:pt-24">
+    <section id="inicio" className="relative min-h-[85vh] sm:min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background pt-20 sm:pt-20 lg:pt-24">
       {/* Decorative Shapes */}
-      <div className="absolute top-0 left-0 w-32 h-32 lg:w-48 lg:h-48 bg-primary/20 rounded-br-full" />
-      <div className="absolute bottom-0 right-0 w-40 h-40 lg:w-64 lg:h-64 bg-primary/15 rounded-tl-full" />
-      <div className="absolute top-1/2 right-0 w-2 h-32 lg:h-48 bg-primary/30" />
+      <div className="absolute top-0 left-0 w-24 h-24 sm:w-32 sm:h-32 lg:w-48 lg:h-48 bg-primary/20 rounded-br-full" />
+      <div className="absolute bottom-0 right-0 w-32 h-32 sm:w-40 sm:h-40 lg:w-64 lg:h-64 bg-primary/15 rounded-tl-full" />
+      <div className="absolute top-1/2 right-0 w-2 h-24 sm:h-32 lg:h-48 bg-primary/30" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -46,7 +46,7 @@ export const Hero = () => {
           </div>
           
           {/* Right Image */}
-          <div className="relative h-[400px] lg:h-[600px] animate-fade-in order-1 lg:order-2">
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[600px] animate-fade-in order-1 lg:order-2">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-sm" />
             <img
               src={heroImage}

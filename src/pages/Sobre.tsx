@@ -126,23 +126,23 @@ const Sobre = () => {
             </div>
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
             <Card className="text-center border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-transparent hover:scale-105 transition-transform duration-300">
-              <CardContent className="p-8">
+              <CardContent className="p-6 sm:p-8">
                 <div className="text-5xl font-bold gradient-text mb-2">30+</div>
                 <div className="text-muted-foreground">Anos de Experiência</div>
               </CardContent>
             </Card>
             
             <Card className="text-center border-2 border-accent/30 bg-gradient-to-br from-accent/5 to-transparent hover:scale-105 transition-transform duration-300">
-              <CardContent className="p-8">
+              <CardContent className="p-6 sm:p-8">
                 <div className="text-5xl font-bold gradient-text mb-2">6</div>
                 <div className="text-muted-foreground">Lojas</div>
               </CardContent>
             </Card>
             
             <Card className="text-center border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-transparent hover:scale-105 transition-transform duration-300">
-              <CardContent className="p-8">
+              <CardContent className="p-6 sm:p-8">
                 <div className="text-5xl font-bold gradient-text mb-2">5000+</div>
                 <div className="text-muted-foreground">Clientes Atendidos</div>
               </CardContent>

@@ -79,7 +79,7 @@ const Tecidos = () => {
       
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-16 sm:pb-20 lg:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
             {/* Left Column - Image Carousel */}
             <div className="space-y-6">
               <Carousel className="w-full" opts={{ loop: true }} plugins={[

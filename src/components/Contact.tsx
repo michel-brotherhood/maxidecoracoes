@@ -148,10 +148,10 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 max-w-6xl mx-auto mb-12 sm:mb-16">
           <div>
             <Card className="border-2 hover:border-primary/50 transition-colors duration-300 shadow-lg">
-              <CardContent className="p-8">
+              <CardContent className="p-5 sm:p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-6">Envie sua Mensagem</h3>
                 <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="space-y-2">
@@ -223,7 +223,7 @@ export const Contact = () => {
 
           <div>
             <Card className="bg-gradient-to-br from-primary to-accent text-primary-foreground border-0 shadow-xl mb-6">
-              <CardContent className="p-8">
+              <CardContent className="p-5 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <Clock className="w-6 h-6" />
                   <h3 className="text-2xl font-bold">Horários de Atendimento</h3>
@@ -244,7 +244,7 @@ export const Contact = () => {
             </Card>
 
             <Card className="border-2 hover:border-green-500/50 transition-colors duration-300">
-              <CardContent className="p-6">
+              <CardContent className="p-5 sm:p-6">
                 <h3 className="text-lg font-bold text-foreground mb-4 flex items-center gap-2">
                   <MessageCircle className="w-5 h-5 text-green-600" />
                   WhatsApp - Loja Principal

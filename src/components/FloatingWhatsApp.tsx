@@ -63,7 +63,7 @@ export const FloatingWhatsApp = () => {
       </button>
 
       {isOpen && (
-        <Card className="fixed bottom-24 right-6 z-40 w-80 shadow-2xl animate-in slide-in-from-bottom-2 duration-300">
+        <Card className="fixed bottom-24 right-4 left-4 sm:left-auto sm:right-6 z-40 w-auto sm:w-80 max-w-sm shadow-2xl animate-in slide-in-from-bottom-2 duration-300">
           <CardContent className="p-4">
             <h3 className="font-semibold text-lg mb-1 text-foreground">
               Escolha uma loja

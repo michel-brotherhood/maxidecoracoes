@@ -147,10 +147,10 @@ const Contato = () => {
 
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
             <Card className="border-2 hover:border-primary/50 transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-2xl">Envie uma Mensagem</CardTitle>
+              <CardHeader className="p-5 sm:p-6">
+                <CardTitle className="text-xl sm:text-2xl">Envie uma Mensagem</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="p-5 sm:p-6 pt-0">
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <Label htmlFor="name">Nome Completo</Label>
@@ -214,13 +214,13 @@ const Contato = () => {
 
             <div className="space-y-6">
               <Card className="border-2 hover:border-primary/50 transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                <CardHeader className="p-5 sm:p-6">
+                  <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
                     <Mail className="w-5 h-5 text-primary" />
                     Contato Rápido
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 p-5 sm:p-6 pt-0">
                   <div>
                     <h3 className="font-semibold mb-2 flex items-center gap-2">
                       <MessageCircle className="w-4 h-4 text-primary" />
@@ -252,13 +252,13 @@ const Contato = () => {
               </Card>
 
               <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                <CardHeader className="p-5 sm:p-6">
+                  <CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
                     <Clock className="w-5 h-5 text-primary" />
                     Horários de Funcionamento
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                <CardContent className="space-y-3 p-5 sm:p-6 pt-0">
                   <div className="bg-white/50 dark:bg-black/20 rounded-lg p-3">
                     <p className="font-semibold text-sm mb-1">Loja Miguel de Frias (Icaraí)</p>
                     <p className="text-sm text-muted-foreground">Segunda a Sexta: 09h - 19h</p>
@@ -286,7 +286,7 @@ const Contato = () => {
                     store.highlight ? "border-primary/50 bg-gradient-to-br from-primary/5 to-accent/5" : "hover:border-primary/30"
                   }`}
                 >
-                  <CardContent className="p-6">
+                  <CardContent className="p-4 sm:p-6">
                     {store.highlight && (
                       <div className="mb-3">
                         <span className="text-xs font-semibold px-3 py-1 bg-primary/20 text-primary rounded-full">

@@ -73,10 +73,10 @@ export const Map = ({ stores }: MapProps) => {
   }, [stores]);
 
   return (
-    <div className="relative w-full h-[500px] rounded-xl overflow-hidden shadow-2xl">
+    <div className="relative w-full h-[350px] sm:h-[450px] lg:h-[500px] rounded-xl overflow-hidden shadow-2xl">
       <div ref={mapContainer} className="absolute inset-0" />
-      <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg p-3 shadow-lg">
-        <p className="text-sm font-medium text-foreground">
+      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur-sm rounded-lg p-2 sm:p-3 shadow-lg">
+        <p className="text-xs sm:text-sm font-medium text-foreground">
           📍 {stores.length} {stores.length === 1 ? 'Loja' : 'Lojas'}
         </p>
       </div>

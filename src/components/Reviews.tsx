@@ -102,11 +102,11 @@ export const Reviews = () => {
         </div>
 
         <div 
-          className="relative mb-12"
+          className="relative mb-8 sm:mb-12"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {visibleReviews.map((review, index) => (
               <div
                 key={`${currentIndex}-${index}`}

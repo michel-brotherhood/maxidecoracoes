@@ -213,9 +213,9 @@ const Produtos = () => {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
+          <div className="mt-12 sm:mt-16 text-center">
             <Card className="max-w-2xl mx-auto bg-gradient-to-br from-primary/10 to-accent/10 border-2 border-primary/30">
-              <CardContent className="p-8">
+              <CardContent className="p-6 sm:p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-4">
                   Precisa de ajuda para escolher?
                 </h3>
