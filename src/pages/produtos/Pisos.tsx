@@ -178,6 +178,23 @@ const Pisos = () => {
                 </CardContent>
               </Card>
 
+              {/* Simulador */}
+              <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">Simulador de Pisos Durafloor</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Visualize como o piso ficará no seu ambiente antes de comprar
+                  </p>
+                  <Button 
+                    variant="default" 
+                    className="w-full"
+                    onClick={() => window.open('https://www.durafloor.com.br/meupisoideal/', '_blank')}
+                  >
+                    Acessar Simulador
+                  </Button>
+                </CardContent>
+              </Card>
+
               {/* Catalogs */}
               <Card>
                 <CardContent className="p-6">
