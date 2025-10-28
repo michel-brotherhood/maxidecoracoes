@@ -14,7 +14,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone } from "lucide-react";
-import textilesImage from "@/assets/products-textiles.jpg";
+import camaMesaBanho1 from "@/assets/cama-mesa-banho-1.png";
+import camaMesaBanho2 from "@/assets/cama-mesa-banho-2.png";
+import camaMesaBanho3 from "@/assets/cama-mesa-banho-3.png";
+import camaMesaBanho4 from "@/assets/cama-mesa-banho-4.png";
 
 const CamaMesaBanho = () => {
   const structuredData = {
@@ -34,8 +37,10 @@ const CamaMesaBanho = () => {
   };
 
   const images = [
-    textilesImage,
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/monsieuria_your_design_here_white_heart-shaped_cushion_mockup_o_9515bb1d-3922-4c03-9914-84e13dcff29a-1-Yg29LnR0znhrkP5d.png"
+    camaMesaBanho1,
+    camaMesaBanho2,
+    camaMesaBanho3,
+    camaMesaBanho4
   ];
 
   const features = [

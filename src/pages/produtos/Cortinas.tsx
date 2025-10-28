@@ -14,7 +14,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone } from "lucide-react";
-import curtainsImage from "@/assets/products-curtains.jpg";
+import cortinas1 from "@/assets/cortinas-1.png";
+import cortinas2 from "@/assets/cortinas-2.png";
+import cortinas3 from "@/assets/cortinas-3.png";
+import cortinas4 from "@/assets/cortinas-4.png";
 
 const Cortinas = () => {
   const structuredData = {
@@ -34,8 +37,10 @@ const Cortinas = () => {
   };
 
   const images = [
-    curtainsImage,
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/robinswell_zara_home_style_beige_and_white_brightenvironment_of_5584eeee-8a4e-4d87-955e-4029f499e069-AGB4M8wO76iwkqpZ.png"
+    cortinas1,
+    cortinas2,
+    cortinas3,
+    cortinas4
   ];
 
   const brands = [
