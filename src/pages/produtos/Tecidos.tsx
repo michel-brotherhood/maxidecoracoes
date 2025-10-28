@@ -14,6 +14,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone, FileText } from "lucide-react";
+import tecidos1 from "@/assets/tecidos-1.png";
+import tecidos2 from "@/assets/tecidos-2.png";
+import tecidos3 from "@/assets/tecidos-3.png";
+import tecidos4 from "@/assets/tecidos-4.png";
 
 const Tecidos = () => {
   const structuredData = {
@@ -33,8 +37,10 @@ const Tecidos = () => {
   };
 
   const images = [
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop,trim=120.46204620462046;0;245.87458745874588;0/YBg4lPQqvZhrZpja/whatsapp-image-2024-08-20-at-08.14.08-mv07r6M2KMfZqOGQ.jpeg",
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/whatsapp-image-2024-08-20-at-08.15.50-AzG7gwaNbes6Ngrz.jpeg",
+    tecidos1,
+    tecidos2,
+    tecidos3,
+    tecidos4
   ];
 
   const additionalBrands = [
