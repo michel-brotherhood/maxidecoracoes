@@ -14,6 +14,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone, FileText } from "lucide-react";
+import tapetes1 from "@/assets/tapetes-1.png";
+import tapetes2 from "@/assets/tapetes-2.png";
+import tapetes3 from "@/assets/tapetes-3.png";
+import tapetes4 from "@/assets/tapetes-4.png";
 
 const Tapetes = () => {
   const structuredData = {
@@ -33,9 +37,10 @@ const Tapetes = () => {
   };
 
   const images = [
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/vitale-edan-home-aplic-AE04MqM06rCpvOpq.jpg",
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/coliseo-edan-home-aplic-m6LJQvXoz2ibrzBp.webp",
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/andreiandreev__the_place_for_the_product_on_the_carpet_is_light_a8130300-00c8-4ad9-9a45-a9621de3b299-mp893ZDnZEUbkJKR.png"
+    tapetes1,
+    tapetes2,
+    tapetes3,
+    tapetes4
   ];
 
   const additionalBrands = ["Beaulieu"];

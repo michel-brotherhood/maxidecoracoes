@@ -15,6 +15,10 @@ import {
 } from "@/components/ui/carousel";
 import { Check, Phone, FileText } from "lucide-react";
 import finottatoLogo from "@/assets/finottato-logo.webp";
+import pisos1 from "@/assets/pisos-1.png";
+import pisos2 from "@/assets/pisos-2.png";
+import pisos3 from "@/assets/pisos-3.png";
+import pisos4 from "@/assets/pisos-4.png";
 
 const Pisos = () => {
   const structuredData = {
@@ -34,8 +38,10 @@ const Pisos = () => {
   };
 
   const images = [
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/164964-1600-1600-YX4bePRjjETe6oO1.webp",
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/piso-laminado-cred-istock_miljanzivkovic-A8542ODV2NH43jLV.jpg"
+    pisos1,
+    pisos2,
+    pisos3,
+    pisos4
   ];
 
   const brands = [
