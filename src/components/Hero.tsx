@@ -33,7 +33,7 @@ export const Hero = () => {
             </p>
             
             {/* Quality Features */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 pt-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 pt-4 max-w-xl">
               <div className="flex flex-col items-center text-center space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Award className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
