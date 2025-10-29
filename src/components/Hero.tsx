@@ -33,30 +33,30 @@ export const Hero = () => {
             </p>
             
             {/* Quality Features */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 pt-4 max-w-xl">
-              <div className="flex flex-col items-start space-y-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 pt-4 max-w-xl mx-auto lg:mx-0">
+              <div className="flex flex-col items-center lg:items-start space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Award className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
-                <span className="text-xs lg:text-sm font-semibold text-foreground">Garantia</span>
+                <span className="text-xs lg:text-sm font-semibold text-foreground text-center lg:text-left">Garantia</span>
               </div>
-              <div className="flex flex-col items-start space-y-2">
+              <div className="flex flex-col items-center lg:items-start space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Zap className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
-                <span className="text-xs lg:text-sm font-semibold text-foreground">Rapidez</span>
+                <span className="text-xs lg:text-sm font-semibold text-foreground text-center lg:text-left">Rapidez</span>
               </div>
-              <div className="flex flex-col items-start space-y-2">
+              <div className="flex flex-col items-center lg:items-start space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Package className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
-                <span className="text-xs lg:text-sm font-semibold text-foreground">Estoque Próprio</span>
+                <span className="text-xs lg:text-sm font-semibold text-foreground text-center lg:text-left">Estoque Próprio</span>
               </div>
-              <div className="flex flex-col items-start space-y-2">
+              <div className="flex flex-col items-center lg:items-start space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Handshake className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
-                <span className="text-xs lg:text-sm font-semibold text-foreground">Confiança</span>
+                <span className="text-xs lg:text-sm font-semibold text-foreground text-center lg:text-left">Confiança</span>
               </div>
             </div>
           </div>
