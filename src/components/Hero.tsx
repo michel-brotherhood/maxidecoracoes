@@ -34,25 +34,25 @@ export const Hero = () => {
             
             {/* Quality Features */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 pt-4 max-w-xl">
-              <div className="flex flex-col items-center text-center space-y-2">
+              <div className="flex flex-col items-start space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Award className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
                 <span className="text-xs lg:text-sm font-semibold text-foreground">Garantia</span>
               </div>
-              <div className="flex flex-col items-center text-center space-y-2">
+              <div className="flex flex-col items-start space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Zap className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
                 <span className="text-xs lg:text-sm font-semibold text-foreground">Rapidez</span>
               </div>
-              <div className="flex flex-col items-center text-center space-y-2">
+              <div className="flex flex-col items-start space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Package className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
                 <span className="text-xs lg:text-sm font-semibold text-foreground">Estoque Próprio</span>
               </div>
-              <div className="flex flex-col items-center text-center space-y-2">
+              <div className="flex flex-col items-start space-y-2">
                 <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
                   <Handshake className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                 </div>
