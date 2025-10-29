@@ -45,6 +45,69 @@ const reviews = [
     comment: "Mais de 30 anos de tradição fazem toda a diferença. Conhecimento técnico e atendimento impecável.",
     date: "Há 1 mês",
     avatar: "RL"
+  },
+  {
+    name: "Fernanda Oliveira",
+    rating: 5,
+    comment: "Comprei cortinas e pisos vinílicos. Ficou perfeito! A instalação foi rápida e muito bem feita. Super recomendo!",
+    date: "Há 3 dias",
+    avatar: "FO"
+  },
+  {
+    name: "Pedro Henrique",
+    rating: 5,
+    comment: "Loja completa com tudo que você precisa para decorar sua casa. Preços competitivos e qualidade excepcional.",
+    date: "Há 2 semanas",
+    avatar: "PH"
+  },
+  {
+    name: "Juliana Martins",
+    rating: 5,
+    comment: "Adorei os tecidos! Variedade incrível de estampas e cores. O atendimento foi super atencioso e me ajudaram a escolher o melhor para minha sala.",
+    date: "Há 1 semana",
+    avatar: "JM"
+  },
+  {
+    name: "Ricardo Souza",
+    rating: 5,
+    comment: "Empresa séria e comprometida com a satisfação do cliente. Comprei tapetes e papel de parede, tudo de primeira qualidade!",
+    date: "Há 3 semanas",
+    avatar: "RS"
+  },
+  {
+    name: "Camila Rodrigues",
+    rating: 5,
+    comment: "Melhor custo-benefício da região! Produtos excelentes e equipe muito prestativa. Já indiquei para vários amigos.",
+    date: "Há 4 dias",
+    avatar: "CR"
+  },
+  {
+    name: "Marcos Vieira",
+    rating: 5,
+    comment: "Fiz a decoração completa do meu apartamento com produtos da Maxi. O resultado superou minhas expectativas!",
+    date: "Há 1 mês",
+    avatar: "MV"
+  },
+  {
+    name: "Patricia Alves",
+    rating: 5,
+    comment: "Atendimento nota 10! Desde o primeiro contato até a entrega final, tudo perfeito. Profissionalismo total.",
+    date: "Há 5 dias",
+    avatar: "PA"
+  },
+  {
+    name: "Thiago Barbosa",
+    rating: 5,
+    comment: "Comprei persianas para todo o escritório. Instalação impecável e produtos de alta durabilidade. Muito satisfeito!",
+    date: "Há 2 semanas",
+    avatar: "TB"
+  },
+  {
+    name: "Renata Campos",
+    rating: 5,
+    comment: "Ambiente acolhedor e equipe super qualificada. Me senti muito bem atendida. Os produtos são lindos e de ótima qualidade!",
+    date: "Há 1 semana",
+    avatar: "RC"
   }
 ];
 
