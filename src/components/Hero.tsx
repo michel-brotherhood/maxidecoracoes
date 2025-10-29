@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, ShoppingBag } from "lucide-react";
+import { MessageCircle, ShoppingBag, Award, Zap, Package, Handshake } from "lucide-react";
 import heroVideo from "@/assets/hero-video.mp4";
 
 export const Hero = () => {
@@ -32,16 +32,32 @@ export const Hero = () => {
               pisos e revestimentos que trazem elegância e conforto para o seu lar.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button 
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm lg:text-base px-6 lg:px-8 py-5 lg:py-6 rounded-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => {
-                  window.open("https://api.whatsapp.com/send/?phone=552126220754&text=Bem+vindos+%C3%A0+Maxi+Decora%C3%A7%C3%B5es&type=phone_number&app_absent=0", "_blank");
-                }}
-              >
-                VER MAIS
-              </Button>
+            {/* Quality Features */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-6 pt-4">
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Award className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
+                </div>
+                <span className="text-xs lg:text-sm font-semibold text-foreground">Garantia</span>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Zap className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
+                </div>
+                <span className="text-xs lg:text-sm font-semibold text-foreground">Rapidez</span>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Package className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
+                </div>
+                <span className="text-xs lg:text-sm font-semibold text-foreground">Estoque Próprio</span>
+              </div>
+              <div className="flex flex-col items-center text-center space-y-2">
+                <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Handshake className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
+                </div>
+                <span className="text-xs lg:text-sm font-semibold text-foreground">Confiança</span>
+              </div>
             </div>
           </div>
           
