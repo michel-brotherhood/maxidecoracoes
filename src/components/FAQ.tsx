@@ -9,7 +9,7 @@ export const FAQ = () => {
   const faqs = [
     {
       question: "Há quanto tempo a Maxi Decorações está no mercado?",
-      answer: "A Maxi Decorações atua há mais de 30 anos no mercado de decoração, oferecendo produtos de alta qualidade e atendimento personalizado para nossos clientes."
+      answer: "A Maxi Decorações atua há mais de 60 anos no mercado de decoração, oferecendo produtos de alta qualidade e atendimento personalizado para nossos clientes."
     },
     {
       question: "Quais produtos vocês trabalham?",
@@ -25,7 +25,7 @@ export const FAQ = () => {
     },
     {
       question: "Vocês trabalham com quais marcas?",
-      answer: "Trabalhamos com as melhores marcas do mercado como Persiana Suprema, Eucatex, Durafloor, Tarkett, Finottato, Tapetes São Carlos, Edantex, Niazitex, Karsten, Döhler, entre outras marcas renomadas."
+      answer: "Trabalhamos com as melhores marcas do mercado como Persiana Suprema, Persianas Gabriel, cortinas trilho Suisso, persianas Maxi, Eucatex, Durafloor, Tarkett, Finottato, Tapetes São Carlos, Edantex, Niazitex, Karsten, Döhler, entre outras marcas renomadas."
     },
     {
       question: "Como faço para solicitar um orçamento?",

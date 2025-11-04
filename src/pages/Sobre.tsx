@@ -43,15 +43,15 @@ const Sobre = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "Sobre a Maxi Decorações",
-    "description": "Conheça nossa história: 30 anos de tradição em decoração de interiores, 6 lojas e mais de 5000 clientes atendidos",
+    "description": "Conheça nossa história: 60 anos de tradição em decoração de interiores, 6 lojas e mais de 5000 clientes atendidos",
     "url": "https://maxi-decoracoes.lovable.app/sobre"
   };
 
   return (
     <>
       <SEO
-        title="Sobre a Maxi Decorações | 30 Anos em Decoração de Interiores"
-        description="30 anos de experiência em decoração. 6 lojas no Rio de Janeiro, 5000+ clientes atendidos. Conheça nossa história, missão, visão e valores em decoração de interiores premium."
+        title="Sobre a Maxi Decorações | 60 Anos em Decoração de Interiores"
+        description="60 anos de experiência em decoração. 6 lojas no Rio de Janeiro, 5000+ clientes atendidos. Conheça nossa história, missão, visão e valores em decoração de interiores premium."
         keywords="sobre maxi decorações, história, empresa decoração, rio de janeiro, niterói, são gonçalo"
         canonicalUrl="https://maxi-decoracoes.lovable.app/sobre"
         structuredData={structuredData}
@@ -66,7 +66,7 @@ const Sobre = () => {
               Sobre a <span className="gradient-text">Maxi Decorações</span>
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Com mais de 30 anos de experiência, somos referência em decoração de interiores no Rio de Janeiro.
+              Com mais de 60 anos de experiência, somos referência em decoração de interiores no Rio de Janeiro.
             </p>
           </div>
 
@@ -129,7 +129,7 @@ const Sobre = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
             <Card className="text-center border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-transparent hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 sm:p-8">
-                <div className="text-5xl font-bold gradient-text mb-2">30+</div>
+                <div className="text-5xl font-bold gradient-text mb-2">60+</div>
                 <div className="text-muted-foreground">Anos de Experiência</div>
               </CardContent>
             </Card>

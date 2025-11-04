@@ -38,12 +38,13 @@ const stores = [
     featured: true,
   },
   {
-    name: "Loja José Clemente 73",
+    name: "Loja José Clemente",
     address: "Rua José Clemente, 73, loja 1",
     district: "Centro, Niterói",
     cep: "CEP 24020-102",
     phone: "(21) 2717-6636 / 2717-5103",
     schedule: "Seg a Sex: 10h - 18h | Sáb: 9h - 13h",
+    featured: true,
   },
   {
     name: "Loja Conceição",

@@ -100,7 +100,7 @@ export const About = () => {
 
         <div className="mt-12 sm:mt-16 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 text-center">
           <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 hover:scale-105 transition-transform duration-300">
-            <div className="text-4xl font-bold text-primary mb-2">30+</div>
+            <div className="text-4xl font-bold text-primary mb-2">60+</div>
             <div className="text-muted-foreground">Anos de Experiência</div>
           </div>
           <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-accent/10 to-transparent border border-accent/20 hover:scale-105 transition-transform duration-300">
