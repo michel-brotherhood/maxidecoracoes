@@ -76,7 +76,7 @@ const Sobre = () => {
                 <h2 className="text-3xl font-bold text-foreground mb-4">Nossa História</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Fundada em 1990, a Maxi Decorações nasceu com o propósito de oferecer produtos de alta qualidade e atendimento diferenciado para o mercado de decoração.
+                    Fundada em 1960, a Maxi Decorações nasceu com o propósito de oferecer produtos de alta qualidade e atendimento diferenciado para o mercado de decoração.
                   </p>
                   <p>
                     Ao longo dos anos, expandimos nossa atuação e hoje contamos com 6 lojas estrategicamente localizadas em Niterói, São Gonçalo e Rio de Janeiro, sempre mantendo nosso compromisso com a excelência.
