@@ -38,9 +38,10 @@ Deno.serve(async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Maxi Decorações <onboarding@resend.dev>",
-        to: ["michel@idlab.art.br"],
-        subject: `Nova mensagem de contato - ${name}`,
+        from: "Contato <no-reply@maxidecoracoes.com.br>",
+        to: ["contato@maxidecoracoes.com.br"],
+        reply_to: [email],
+        subject: "Novo cadastro no site",
         html: `
           <!DOCTYPE html>
           <html>
@@ -119,7 +120,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "Maxi Decorações <onboarding@resend.dev>",
+        from: "Contato <no-reply@maxidecoracoes.com.br>",
         to: [email],
         subject: "Recebemos sua mensagem - Maxi Decorações",
         html: `
