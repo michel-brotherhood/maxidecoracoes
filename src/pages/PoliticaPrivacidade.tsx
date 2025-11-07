@@ -13,7 +13,7 @@ const PoliticaPrivacidade = () => {
       />
       <div className="min-h-screen">
         <Navigation />
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 max-w-4xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 max-w-4xl">
           <h1 className="text-4xl font-bold text-foreground mb-8">
             Política de <span className="gradient-text">Privacidade</span>
           </h1>
