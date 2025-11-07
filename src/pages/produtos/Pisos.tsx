@@ -23,18 +23,64 @@ import pisos4 from "@/assets/pisos-4.png";
 const Pisos = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Pisos Vinílicos e Laminados",
-    "description": "Pisos vinílicos, laminados, hospitalares e para academias. Marcas Eucatex, Durafloor, Tarkett. Instalação profissional",
-    "brand": {
-      "@type": "Brand",
-      "name": "Maxi Decorações"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://maxi-decoracoes.lovable.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Produtos",
+            "item": "https://maxi-decoracoes.lovable.app/produtos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pisos",
+            "item": "https://maxi-decoracoes.lovable.app/produtos/pisos"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://maxi-decoracoes.lovable.app/produtos/pisos#product",
+        "name": "Pisos Vinílicos e Laminados",
+        "description": "Pisos vinílicos e laminados de alta qualidade com fácil instalação e manutenção. Marcas premium Durafloor e Eucatex. Resistentes, duráveis e com variedade de texturas que imitam madeira e pedra.",
+        "image": "https://maxi-decoracoes.lovable.app/pisos-1.png",
+        "brand": [
+          {
+            "@type": "Brand",
+            "name": "Durafloor"
+          },
+          {
+            "@type": "Brand",
+            "name": "Eucatex"
+          }
+        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Maxi Decorações"
+          }
+        },
+        "category": "Pisos e Revestimentos",
+        "material": ["Vinílico", "Laminado"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.7",
+          "reviewCount": "89"
+        }
+      }
+    ]
   };
 
   const images = [

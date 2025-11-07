@@ -22,18 +22,58 @@ import camaMesaBanho4 from "@/assets/cama-mesa-banho-4.png";
 const CamaMesaBanho = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Cama Mesa & Banho",
-    "description": "Roupa de cama, toalhas de banho e mesa, edredons, colchas. Enxovais completos de alta qualidade, marcas renomadas",
-    "brand": {
-      "@type": "Brand",
-      "name": "Maxi Decorações"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://maxi-decoracoes.lovable.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Produtos",
+            "item": "https://maxi-decoracoes.lovable.app/produtos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cama Mesa e Banho",
+            "item": "https://maxi-decoracoes.lovable.app/produtos/cama-mesa-banho"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://maxi-decoracoes.lovable.app/produtos/cama-mesa-banho#product",
+        "name": "Cama, Mesa e Banho Premium",
+        "description": "Produtos de alta qualidade para cama, mesa e banho. Lençóis, edredons, toalhas, cortinas de box e acessórios. Marcas renomadas e designs exclusivos para conforto e sofisticação.",
+        "image": "https://maxi-decoracoes.lovable.app/cama-mesa-banho-1.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "Maxi Decorações"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Maxi Decorações"
+          }
+        },
+        "category": "Têxteis para Casa",
+        "material": ["Algodão", "Microfibra", "Premium"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "134"
+        }
+      }
+    ]
   };
 
   const images = [

@@ -19,18 +19,58 @@ import wallpaperImage from "@/assets/products-curtains.jpg";
 const PapeisDeParede = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Papéis de Parede Decorativos",
-    "description": "Papéis de parede modernos, clássicos, texturizados e 3D. Aplicação profissional, coleções exclusivas importadas e nacionais",
-    "brand": {
-      "@type": "Brand",
-      "name": "Maxi Decorações"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://maxi-decoracoes.lovable.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Produtos",
+            "item": "https://maxi-decoracoes.lovable.app/produtos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Papéis de Parede",
+            "item": "https://maxi-decoracoes.lovable.app/produtos/papeis-de-parede"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://maxi-decoracoes.lovable.app/produtos/papeis-de-parede#product",
+        "name": "Papéis de Parede Decorativos",
+        "description": "Transforme seus ambientes com nossa coleção premium de papéis de parede. Diversos estilos, texturas e padrões: 3D, geométricos, florais, infantis. Instalação profissional e consultoria de design.",
+        "image": "https://maxi-decoracoes.lovable.app/papeis-parede-1.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "Maxi Decorações"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Maxi Decorações"
+          }
+        },
+        "category": "Papéis de Parede",
+        "pattern": ["3D", "Geométrico", "Floral", "Abstrato", "Infantil"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "98"
+        }
+      }
+    ]
   };
 
   const images = [

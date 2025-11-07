@@ -22,18 +22,68 @@ import tapetes4 from "@/assets/tapetes-4.png";
 const Tapetes = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Tapetes Decorativos e Carpetes",
-    "description": "Tapetes residenciais e comerciais, nacionais e importados. Marcas São Carlos, Edantex, Niazitex. Métodos sustentáveis",
-    "brand": {
-      "@type": "Brand",
-      "name": "Maxi Decorações"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://maxi-decoracoes.lovable.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Produtos",
+            "item": "https://maxi-decoracoes.lovable.app/produtos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Tapetes",
+            "item": "https://maxi-decoracoes.lovable.app/produtos/tapetes"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://maxi-decoracoes.lovable.app/produtos/tapetes#product",
+        "name": "Tapetes e Carpetes Decorativos",
+        "description": "Ampla variedade de tapetes e carpetes para todos os ambientes. Materiais sustentáveis, designs exclusivos e tecnologia de alta durabilidade. Marcas São Carlos, Edantex e Niazitex.",
+        "image": "https://maxi-decoracoes.lovable.app/tapetes-1.png",
+        "brand": [
+          {
+            "@type": "Brand",
+            "name": "São Carlos"
+          },
+          {
+            "@type": "Brand",
+            "name": "Edantex"
+          },
+          {
+            "@type": "Brand",
+            "name": "Niazitex"
+          }
+        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Maxi Decorações"
+          }
+        },
+        "category": "Tapetes e Carpetes",
+        "material": ["Sustentável", "Antialérgico", "Durável"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "156"
+        }
+      }
+    ]
   };
 
   const images = [

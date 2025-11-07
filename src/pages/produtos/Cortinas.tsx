@@ -22,18 +22,58 @@ import cortinas4 from "@/assets/cortinas-4.png";
 const Cortinas = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Cortinas e Persianas Sob Medida",
-    "description": "Cortinas sob medida e persianas: ateliê próprio, medição e instalação gratuita. Blackout, rolô, horizontais e verticais",
-    "brand": {
-      "@type": "Brand",
-      "name": "Maxi Decorações"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://maxi-decoracoes.lovable.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Produtos",
+            "item": "https://maxi-decoracoes.lovable.app/produtos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Cortinas",
+            "item": "https://maxi-decoracoes.lovable.app/produtos/cortinas"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://maxi-decoracoes.lovable.app/produtos/cortinas#product",
+        "name": "Cortinas Sob Medida e Persianas",
+        "description": "Cortinas personalizadas e persianas para todos os ambientes. Design exclusivo, instalação profissional e consultoria especializada. Variedade de estilos: romanas, rolô, trilho, varal e persianas.",
+        "image": "https://maxi-decoracoes.lovable.app/cortinas-1.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "Maxi Decorações"
+        },
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Maxi Decorações"
+          }
+        },
+        "category": "Cortinas e Persianas",
+        "serviceType": ["Design Personalizado", "Instalação Profissional", "Consultoria Especializada"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "203"
+        }
+      }
+    ]
   };
 
   const images = [

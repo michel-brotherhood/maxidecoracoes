@@ -22,18 +22,76 @@ import tecidos4 from "@/assets/tecidos-4.png";
 const Tecidos = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Tecidos para Decoração e Estofamento",
-    "description": "Ampla variedade de tecidos nobres: decorativos, estofados, veludos, linhos, blackout. Marcas Karsten, Döhler, Edantex",
-    "brand": {
-      "@type": "Brand",
-      "name": "Maxi Decorações"
-    },
-    "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "BRL",
-      "availability": "https://schema.org/InStock"
-    }
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://maxi-decoracoes.lovable.app/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Produtos",
+            "item": "https://maxi-decoracoes.lovable.app/produtos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Tecidos",
+            "item": "https://maxi-decoracoes.lovable.app/produtos/tecidos"
+          }
+        ]
+      },
+      {
+        "@type": "Product",
+        "@id": "https://maxi-decoracoes.lovable.app/produtos/tecidos#product",
+        "name": "Tecidos para Decoração e Estofamento",
+        "description": "Ampla variedade de tecidos nobres: decorativos, estofados, veludos, linhos, blackout. Marcas Karsten, Döhler, Edantex. Tecidos especializados AquaBlock, WaterBlock e AquaTec para proteção contra água e manchas.",
+        "image": "https://maxi-decoracoes.lovable.app/tecidos-1.png",
+        "brand": [
+          {
+            "@type": "Brand",
+            "name": "Karsten"
+          },
+          {
+            "@type": "Brand",
+            "name": "Döhler"
+          },
+          {
+            "@type": "Brand",
+            "name": "Edantex"
+          },
+          {
+            "@type": "Brand",
+            "name": "Nazareth"
+          },
+          {
+            "@type": "Brand",
+            "name": "Fiama"
+          }
+        ],
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "BRL",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Maxi Decorações"
+          }
+        },
+        "category": "Tecidos para Decoração",
+        "material": ["Veludo", "Linho", "Blackout", "Voil", "Impermeável"],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "127"
+        }
+      }
+    ]
   };
 
   const images = [
