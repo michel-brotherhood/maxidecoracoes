@@ -82,6 +82,17 @@ export const Footer = () => {
 
         <div className="border-t border-background/20 pt-8 text-center text-sm text-background/70">
           <p>&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
+          <p className="mt-2">
+            Desenvolvido por{" "}
+            <a 
+              href="https://idlab.art.br" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold"
+            >
+              ID_Lab
+            </a>
+          </p>
         </div>
       </div>
     </footer>
