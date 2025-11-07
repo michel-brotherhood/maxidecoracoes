@@ -18,9 +18,13 @@ export const Footer = () => {
                 <span className="text-xs uppercase tracking-[0.3em] text-background/70">DECORAÇÕES</span>
               </div>
             </div>
-            <p className="text-background/70 text-sm">
-              Sua referência em decoração de alta qualidade desde 1990.
+            <p className="text-background/70 text-sm mb-3">
+              Há mais de 60 anos oferecendo soluções completas em decoração com qualidade e elegância.
             </p>
+            <div className="text-background/70 text-xs space-y-1">
+              <p className="font-semibold">Maxi Decoracoes Ltda</p>
+              <p>CNPJ: 32.572.893/0001-36</p>
+            </div>
           </div>
 
           <div>
