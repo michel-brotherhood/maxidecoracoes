@@ -8,6 +8,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { SEO } from "@/components/SEO";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const Index = () => {
   const structuredData = {
@@ -134,6 +135,7 @@ const Index = () => {
         <Contact />
         <Footer />
         <FloatingWhatsApp />
+        <CookieConsent />
       </div>
     </>
   );

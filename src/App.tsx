@@ -14,6 +14,7 @@ import Pisos from "./pages/produtos/Pisos";
 import Cortinas from "./pages/produtos/Cortinas";
 import PapeisDeParede from "./pages/produtos/PapeisDeParede";
 import CamaMesaBanho from "./pages/produtos/CamaMesaBanho";
+import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/produtos/cama-mesa-banho" element={<CamaMesaBanho />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/politica-privacidade" element={<PoliticaPrivacidade />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -24,6 +24,9 @@ const contactSchema = z.object({
     .trim()
     .min(10, { message: "Mensagem deve ter pelo menos 10 caracteres" })
     .max(1000, { message: "Mensagem deve ter no máximo 1000 caracteres" }),
+  privacyAccepted: z.boolean().refine((val) => val === true, {
+    message: "Você deve aceitar a política de privacidade",
+  }),
 });
 
 const stores = [
@@ -88,6 +91,7 @@ export const Contact = () => {
     email: "",
     phone: "",
     message: "",
+    privacyAccepted: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const { toast } = useToast();
@@ -99,8 +103,9 @@ export const Contact = () => {
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type } = e.target;
+    const newValue = type === 'checkbox' ? (e.target as HTMLInputElement).checked : value;
+    setFormData(prev => ({ ...prev, [name]: newValue }));
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: "" }));
     }
@@ -125,7 +130,7 @@ export const Contact = () => {
         title: "Mensagem enviada!",
         description: "Recebemos sua mensagem e entraremos em contato em breve.",
       });
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", message: "", privacyAccepted: false });
     } catch (error) {
       if (error instanceof z.ZodError) {
         const newErrors: Record<string, string> = {};
@@ -213,6 +218,29 @@ export const Contact = () => {
                       className={`min-h-32 transition-all duration-300 focus:ring-2 focus:ring-primary ${errors.message ? 'border-destructive' : ''}`}
                     />
                     {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      name="privacyAccepted"
+                      id="privacyAccepted"
+                      checked={formData.privacyAccepted}
+                      onChange={handleInputChange}
+                      className="mt-1 w-4 h-4 text-primary border-border rounded focus:ring-2 focus:ring-primary cursor-pointer"
+                    />
+                    <label htmlFor="privacyAccepted" className="text-sm text-muted-foreground cursor-pointer">
+                      Li e aceito a{" "}
+                      <a 
+                        href="/politica-privacidade" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline font-semibold"
+                      >
+                        Política de Privacidade
+                      </a>
+                      {" "}e concordo com o tratamento dos meus dados pessoais. *
+                      {errors.privacyAccepted && <p className="text-xs text-destructive mt-1">{errors.privacyAccepted}</p>}
+                    </label>
                   </div>
                   <Button 
                     variant="gradient"

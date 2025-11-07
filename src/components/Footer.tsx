@@ -39,6 +39,7 @@ export const Footer = () => {
             <ul className="space-y-2 text-sm text-background/70">
               <li><a href="/sobre" className="hover:text-background transition-colors">Sobre Nós</a></li>
               <li><a href="/contato" className="hover:text-background transition-colors">Contato</a></li>
+              <li><a href="/politica-privacidade" className="hover:text-background transition-colors">Política de Privacidade</a></li>
               <li className="pt-2">
                 <a href="mailto:contato@maxidecoracoes.com.br" className="hover:text-background transition-colors">
                   contato@maxidecoracoes.com.br
