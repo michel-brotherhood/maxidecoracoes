@@ -14,13 +14,39 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone, FileText } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import finottatoLogo from "@/assets/finottato-logo.webp";
 import pisos1 from "@/assets/pisos-1.png";
 import pisos2 from "@/assets/pisos-2.png";
 import pisos3 from "@/assets/pisos-3.png";
 import pisos4 from "@/assets/pisos-4.png";
+import durafloorLogo from "@/assets/brands/durafloor.png";
+import eucatexLogo from "@/assets/brands/eucatex.png";
+import tarkettLogo from "@/assets/brands/tarkett.png";
 
 const Pisos = () => {
+  const [brandsVisible, setBrandsVisible] = useState(false);
+  const brandsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setBrandsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (brandsRef.current) {
+      observer.observe(brandsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -91,9 +117,9 @@ const Pisos = () => {
   ];
 
   const brands = [
-    { name: "Eucatex", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=171,h=49,fit=crop/YBg4lPQqvZhrZpja/images-2-mk39qK8oJRHqQwn4.png" },
-    { name: "Durafloor", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=218,h=48,fit=crop/YBg4lPQqvZhrZpja/images-3-dOq48glJOouQM6r7.png" },
-    { name: "Tarkett", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=203,h=43,fit=crop/YBg4lPQqvZhrZpja/images-AR0bMg2XJQc7JvN5.png" },
+    { name: "Eucatex", logo: eucatexLogo },
+    { name: "Durafloor", logo: durafloorLogo },
+    { name: "Tarkett", logo: tarkettLogo },
     { name: "Finottato", logo: finottatoLogo },
   ];
 
@@ -166,13 +192,28 @@ const Pisos = () => {
               </Carousel>
 
               {/* Brands */}
-              <Card>
+              <Card ref={brandsRef} className="bg-gradient-to-br from-secondary/20 to-background border-2">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com as melhores marcas:</h3>
-                  <div className="grid grid-cols-2 gap-4 items-center">
+                  <h3 className="font-semibold text-base mb-5 text-foreground text-center">Trabalhamos com as melhores marcas</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-5">
                     {brands.map((brand, index) => (
-                      <div key={index} className="flex items-center justify-center p-2 bg-secondary/50 rounded-lg">
-                        <img src={brand.logo} alt={brand.name} className="max-h-12 w-auto object-contain" />
+                      <div 
+                        key={index} 
+                        className={`flex items-center justify-center p-5 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[100px] ${
+                          brandsVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-4'
+                        }`}
+                        style={{
+                          transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+                          transitionDelay: `${index * 100}ms`
+                        }}
+                      >
+                        <img 
+                          src={brand.logo} 
+                          alt={`Logo ${brand.name}`} 
+                          className="max-h-14 max-w-full w-auto h-auto object-contain"
+                        />
                       </div>
                     ))}
                   </div>
