@@ -189,16 +189,19 @@ const Tecidos = () => {
               </Carousel>
 
               {/* Brands */}
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com as melhores marcas:</h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 items-center">
+              <Card className="bg-gradient-to-br from-secondary/20 to-background border-2">
+                <CardContent className="p-8">
+                  <h3 className="font-semibold text-lg mb-6 text-foreground text-center">Trabalhamos com as melhores marcas</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
                     {brands.map((brand, index) => (
-                      <div key={index} className="flex items-center justify-center p-3 bg-background border border-border rounded-lg hover:border-primary/50 transition-colors">
+                      <div 
+                        key={index} 
+                        className="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 aspect-square"
+                      >
                         <img 
                           src={brand.logo} 
                           alt={`Logo ${brand.name}`} 
-                          className="max-h-12 w-full object-contain grayscale hover:grayscale-0 transition-all"
+                          className="max-h-16 max-w-full w-auto h-auto object-contain"
                         />
                       </div>
                     ))}
