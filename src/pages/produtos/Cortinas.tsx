@@ -14,12 +14,37 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import cortinas1 from "@/assets/cortinas-1.png";
 import cortinas2 from "@/assets/cortinas-2.png";
 import cortinas3 from "@/assets/cortinas-3.png";
 import cortinas4 from "@/assets/cortinas-4.png";
+import trilhoSuissoLogo from "@/assets/brands/trilho-suisso.jpg";
+import gabrielPersianas from "@/assets/brands/gabriel-persianas.png";
 
 const Cortinas = () => {
+  const [brandsVisible, setBrandsVisible] = useState(false);
+  const brandsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setBrandsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (brandsRef.current) {
+      observer.observe(brandsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -84,10 +109,8 @@ const Cortinas = () => {
   ];
 
   const brands = [
-    "MAXI Ateliê Cortinas",
-    "Gabriel Persianas",
-    "MAXI Persianas",
-    "Trilho Suisso"
+    { name: "Trilho Suisso", logo: trilhoSuissoLogo },
+    { name: "Gabriel Persianas", logo: gabrielPersianas },
   ];
 
   const features = [
@@ -159,14 +182,29 @@ const Cortinas = () => {
               </Carousel>
 
               {/* Brands */}
-              <Card>
+              <Card ref={brandsRef} className="bg-gradient-to-br from-secondary/20 to-background border-2">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com:</h3>
-                  <div className="flex flex-wrap gap-2">
+                  <h3 className="font-semibold text-base mb-5 text-foreground text-center">Trabalhamos com as melhores marcas</h3>
+                  <div className="grid grid-cols-2 gap-5">
                     {brands.map((brand, index) => (
-                      <Badge key={index} variant="secondary">
-                        {brand}
-                      </Badge>
+                      <div 
+                        key={index} 
+                        className={`flex items-center justify-center p-5 bg-secondary/30 rounded-xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[100px] ${
+                          brandsVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-4'
+                        }`}
+                        style={{
+                          transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+                          transitionDelay: `${index * 100}ms`
+                        }}
+                      >
+                        <img 
+                          src={brand.logo} 
+                          alt={`Logo ${brand.name}`} 
+                          className="max-h-14 max-w-full w-auto h-auto object-contain"
+                        />
+                      </div>
                     ))}
                   </div>
                 </CardContent>
@@ -184,7 +222,7 @@ const Cortinas = () => {
                   Oferecemos persianas e cortinas sob medida, além de cortinas prontas. Nosso ateliê próprio combina funcionalidade e design elegante, garantindo produtos de alta qualidade.
                 </p>
                 <p className="text-base text-muted-foreground leading-relaxed">
-                  Com <strong>medição gratuita</strong> e <strong>instalação profissional</strong>, trabalhamos com as melhores marcas como MAXI Ateliê Cortinas, Gabriel Persianas e Trilho Suisso. Oferecemos opções de automação para maior comodidade. Cada projeto é único e recebe atenção especial da nossa equipe especializada.
+                  Com <strong>medição gratuita</strong> e <strong>instalação profissional</strong>, trabalhamos com as melhores marcas como Trilho Suisso e Gabriel Persianas. Oferecemos opções de automação para maior comodidade. Cada projeto é único e recebe atenção especial da nossa equipe especializada.
                 </p>
               </div>
 
