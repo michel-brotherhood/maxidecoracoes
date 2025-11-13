@@ -14,6 +14,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone, FileText } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import tecidos1 from "@/assets/tecidos-1.png";
 import tecidos2 from "@/assets/tecidos-2.png";
 import tecidos3 from "@/assets/tecidos-3.png";
@@ -28,6 +29,28 @@ import karstenLogo from "@/assets/brands/karsten.png";
 import nazarethLogo from "@/assets/brands/nazareth.png";
 
 const Tecidos = () => {
+  const [brandsVisible, setBrandsVisible] = useState(false);
+  const brandsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setBrandsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (brandsRef.current) {
+      observer.observe(brandsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -189,19 +212,27 @@ const Tecidos = () => {
               </Carousel>
 
               {/* Brands */}
-              <Card className="bg-gradient-to-br from-secondary/20 to-background border-2">
-                <CardContent className="p-8">
-                  <h3 className="font-semibold text-lg mb-6 text-foreground text-center">Trabalhamos com as melhores marcas</h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+              <Card ref={brandsRef} className="bg-gradient-to-br from-secondary/20 to-background border-2">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-base mb-5 text-foreground text-center">Trabalhamos com as melhores marcas</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     {brands.map((brand, index) => (
                       <div 
                         key={index} 
-                        className="flex items-center justify-center p-4 bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 aspect-square"
+                        className={`flex items-center justify-center p-3 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 aspect-square ${
+                          brandsVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-4'
+                        }`}
+                        style={{
+                          transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+                          transitionDelay: `${index * 100}ms`
+                        }}
                       >
                         <img 
                           src={brand.logo} 
                           alt={`Logo ${brand.name}`} 
-                          className="max-h-16 max-w-full w-auto h-auto object-contain"
+                          className="max-h-10 max-w-full w-auto h-auto object-contain"
                         />
                       </div>
                     ))}
