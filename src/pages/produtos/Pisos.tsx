@@ -199,7 +199,7 @@ const Pisos = () => {
                     {brands.map((brand, index) => (
                       <div 
                         key={index} 
-                        className={`flex items-center justify-center p-5 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[100px] ${
+                        className={`flex items-center justify-center p-5 bg-secondary/30 rounded-xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[100px] ${
                           brandsVisible 
                             ? 'opacity-100 translate-y-0' 
                             : 'opacity-0 translate-y-4'
