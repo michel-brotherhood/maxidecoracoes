@@ -14,12 +14,39 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone, FileText } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import tapetes1 from "@/assets/tapetes-1.png";
 import tapetes2 from "@/assets/tapetes-2.png";
 import tapetes3 from "@/assets/tapetes-3.png";
 import tapetes4 from "@/assets/tapetes-4.png";
+import beaulieuLogo from "@/assets/brands/beaulieu.gif";
+import edantexTapetesLogo from "@/assets/brands/edantex-tapetes.jpg";
+import niazitexLogo from "@/assets/brands/niazitex.jpg";
+import tapetesSaoCarlosLogo from "@/assets/brands/tapetes-sao-carlos.jpg";
 
 const Tapetes = () => {
+  const [brandsVisible, setBrandsVisible] = useState(false);
+  const brandsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setBrandsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (brandsRef.current) {
+      observer.observe(brandsRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -93,12 +120,11 @@ const Tapetes = () => {
     tapetes4
   ];
 
-  const additionalBrands = ["Beaulieu"];
-
   const brands = [
-    { name: "Tapetes São Carlos", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=184,h=60,fit=crop/YBg4lPQqvZhrZpja/images-1-AoPGqKZobPuoja2r.png" },
-    { name: "Edantex", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=184,h=60,fit=crop/YBg4lPQqvZhrZpja/logo-edan-postv-1024x334-mk39qK8ongiqQzbx.webp" },
-    { name: "Niazitex", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=162,h=97,fit=crop/YBg4lPQqvZhrZpja/images-4-AwvkDKj3kwtJRloD.png" },
+    { name: "Beaulieu", logo: beaulieuLogo },
+    { name: "Edantex", logo: edantexTapetesLogo },
+    { name: "Niazitex", logo: niazitexLogo },
+    { name: "Tapetes São Carlos", logo: tapetesSaoCarlosLogo },
   ];
 
   const features = [
@@ -170,21 +196,29 @@ const Tapetes = () => {
               </Carousel>
 
               {/* Brands */}
-              <Card>
+              <Card ref={brandsRef} className="bg-gradient-to-br from-secondary/20 to-background border-2">
                 <CardContent className="p-6">
-                  <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com as melhores marcas:</h3>
-                  <div className="grid grid-cols-3 gap-4 items-center mb-4">
+                  <h3 className="font-semibold text-base mb-5 text-foreground text-center">Trabalhamos com as melhores marcas</h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-2 gap-5">
                     {brands.map((brand, index) => (
-                      <div key={index} className="flex items-center justify-center p-2 bg-secondary/50 rounded-lg">
-                        <img src={brand.logo} alt={brand.name} className="max-h-12 w-auto object-contain" />
+                      <div 
+                        key={index} 
+                        className={`flex items-center justify-center p-5 bg-secondary/30 rounded-xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[100px] ${
+                          brandsVisible 
+                            ? 'opacity-100 translate-y-0' 
+                            : 'opacity-0 translate-y-4'
+                        }`}
+                        style={{
+                          transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
+                          transitionDelay: `${index * 100}ms`
+                        }}
+                      >
+                        <img 
+                          src={brand.logo} 
+                          alt={`Logo ${brand.name}`} 
+                          className="max-h-14 max-w-full w-auto h-auto object-contain"
+                        />
                       </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {additionalBrands.map((brand, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {brand}
-                      </Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -199,7 +233,7 @@ const Tapetes = () => {
                   Tapetes
                 </h1>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  A Maxi Decorações oferece uma ampla variedade de tapetes para uso residencial e comercial, nacionais e importados. Fornecidos por renomadas marcas como Tapetes São Carlos, Edantex e Niazitex.
+                  A Maxi Decorações oferece uma ampla variedade de tapetes para uso residencial e comercial, nacionais e importados. Fornecidos por renomadas marcas como Beaulieu, Edantex, Niazitex e Tapetes São Carlos.
                 </p>
                 <p className="text-base text-muted-foreground leading-relaxed">
                   Fabricados com <strong>métodos ecologicamente sustentáveis</strong>, nossos tapetes são perfeitos para qualquer ambiente, proporcionando conforto, estilo e durabilidade. Oferecemos também <strong>carpetes para uso comercial e residencial</strong>, com colas e acessórios de qualidade. Carpetes finos ideais para cenários também disponíveis.
