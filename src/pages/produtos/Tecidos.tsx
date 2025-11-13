@@ -215,11 +215,11 @@ const Tecidos = () => {
               <Card ref={brandsRef} className="bg-gradient-to-br from-secondary/20 to-background border-2">
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-base mb-5 text-foreground text-center">Trabalhamos com as melhores marcas</h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-5">
                     {brands.map((brand, index) => (
                       <div 
                         key={index} 
-                        className={`flex items-center justify-center p-3 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 aspect-square ${
+                        className={`flex items-center justify-center p-5 bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 min-h-[100px] ${
                           brandsVisible 
                             ? 'opacity-100 translate-y-0' 
                             : 'opacity-0 translate-y-4'
@@ -232,7 +232,7 @@ const Tecidos = () => {
                         <img 
                           src={brand.logo} 
                           alt={`Logo ${brand.name}`} 
-                          className="max-h-10 max-w-full w-auto h-auto object-contain"
+                          className="max-h-14 max-w-full w-auto h-auto object-contain"
                         />
                       </div>
                     ))}
