@@ -18,6 +18,14 @@ import tecidos1 from "@/assets/tecidos-1.png";
 import tecidos2 from "@/assets/tecidos-2.png";
 import tecidos3 from "@/assets/tecidos-3.png";
 import tecidos4 from "@/assets/tecidos-4.png";
+import branylLogo from "@/assets/brands/branyl.png";
+import corttexLogo from "@/assets/brands/corttex.png";
+import dajuLogo from "@/assets/brands/daju.jpg";
+import dohlerLogo from "@/assets/brands/dohler.gif";
+import edantexLogo from "@/assets/brands/edantex.jpg";
+import fiamaLogo from "@/assets/brands/fiama.png";
+import karstenLogo from "@/assets/brands/karsten.png";
+import nazarethLogo from "@/assets/brands/nazareth.png";
 
 const Tecidos = () => {
   const structuredData = {
@@ -101,14 +109,15 @@ const Tecidos = () => {
     tecidos4
   ];
 
-  const additionalBrands = [
-    "Nazareth", "Fiama", "Corttex", "Daruj", "Branyl"
-  ];
-
   const brands = [
-    { name: "Karsten", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=210,h=50,fit=crop/YBg4lPQqvZhrZpja/karsten-mePnbK5DB5tgKJEq.jpg" },
-    { name: "Döhler", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=166,h=54,fit=crop/YBg4lPQqvZhrZpja/dohler-logo-A854EX28eyS9Pev4.jpg" },
-    { name: "Edantex", logo: "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=184,h=60,fit=crop/YBg4lPQqvZhrZpja/images-1-AoPGqKZobPuoja2r.png" },
+    { name: "Branyl", logo: branylLogo },
+    { name: "Corttex", logo: corttexLogo },
+    { name: "Daju", logo: dajuLogo },
+    { name: "Döhler", logo: dohlerLogo },
+    { name: "Edantex", logo: edantexLogo },
+    { name: "Fiama", logo: fiamaLogo },
+    { name: "Karsten", logo: karstenLogo },
+    { name: "Nazareth", logo: nazarethLogo },
   ];
 
   const features = [
@@ -183,18 +192,15 @@ const Tecidos = () => {
               <Card>
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-sm mb-4 text-muted-foreground">Trabalhamos com as melhores marcas:</h3>
-                  <div className="grid grid-cols-3 gap-4 items-center mb-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 items-center">
                     {brands.map((brand, index) => (
-                      <div key={index} className="flex items-center justify-center p-2 bg-secondary/50 rounded-lg">
-                        <img src={brand.logo} alt={brand.name} className="max-h-12 w-auto object-contain" />
+                      <div key={index} className="flex items-center justify-center p-3 bg-background border border-border rounded-lg hover:border-primary/50 transition-colors">
+                        <img 
+                          src={brand.logo} 
+                          alt={`Logo ${brand.name}`} 
+                          className="max-h-12 w-full object-contain grayscale hover:grayscale-0 transition-all"
+                        />
                       </div>
-                    ))}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {additionalBrands.map((brand, index) => (
-                      <Badge key={index} variant="outline" className="text-xs">
-                        {brand}
-                      </Badge>
                     ))}
                   </div>
                 </CardContent>
