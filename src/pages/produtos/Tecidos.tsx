@@ -19,7 +19,7 @@ import tecidos2 from "@/assets/tecidos-2.png";
 import tecidos3 from "@/assets/tecidos-3.png";
 import tecidos4 from "@/assets/tecidos-4.png";
 import branylLogo from "@/assets/brands/branyl.png";
-import corttexLogo from "@/assets/brands/corttex.webp";
+import corttexLogo from "@/assets/brands/corttex-new.png";
 import dajuLogo from "@/assets/brands/daju.jpg";
 import dohlerLogo from "@/assets/brands/dohler.gif";
 import edantexLogo from "@/assets/brands/edantex.jpg";
