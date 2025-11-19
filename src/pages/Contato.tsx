@@ -82,8 +82,14 @@ const Contato = () => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contato - Maxi Decorações",
-    "description": "Entre em contato com a Maxi Decorações. 6 lojas no RJ: Niterói, São Gonçalo e Tijuca. WhatsApp, email e formulário de contato",
-    "url": "https://maxi-decoracoes.lovable.app/contato"
+    "description": "Entre em contato com a Maxi Decorações. 6 lojas no Rio de Janeiro: Niterói (Icaraí, Centro), São Gonçalo e Tijuca. WhatsApp (21) 2622-0754, email contato@maxidecoracoes.com.br",
+    "url": "https://maxi-decoracoes.lovable.app/contato",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Maxi Decorações",
+      "telephone": "+55-21-2622-0754",
+      "email": "contato@maxidecoracoes.com.br"
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
