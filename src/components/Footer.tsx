@@ -78,9 +78,9 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8 text-center text-sm text-background/70">
+        <div className="border-t border-background/20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-background/70">
           <p>&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
-          <p className="mt-2">
+          <p>
             Desenvolvido por{" "}
             <a 
               href="https://idlab.art.br" 
