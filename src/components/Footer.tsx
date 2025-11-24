@@ -91,11 +91,11 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8 text-sm text-background/70 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
-          <p>&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
+        <div className="border-t border-background/20 pt-8 text-xs sm:text-sm text-background/70 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
+          <p className="whitespace-nowrap">&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
           <div className="hidden md:block"></div>
           <div className="hidden md:block"></div>
-          <p>
+          <p className="whitespace-nowrap">
             Desenvolvido por{" "}
             <a 
               href="https://idlab.art.br" 
