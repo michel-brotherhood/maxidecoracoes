@@ -92,7 +92,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t border-background/20 pt-8 text-sm text-background/70 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-          <p>&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
+          <p className="whitespace-nowrap">&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
           <div className="hidden md:block"></div>
           <div className="hidden md:block"></div>
           <p>
