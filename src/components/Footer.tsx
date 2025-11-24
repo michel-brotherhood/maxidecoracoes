@@ -30,12 +30,11 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">Produtos</h3>
             <ul className="space-y-2 text-sm text-background/70">
-              <li><a href="/produtos/pisos" className="hover:text-background transition-colors">Piso Laminado</a></li>
-              <li><a href="/produtos/pisos" className="hover:text-background transition-colors">Piso Vinílico</a></li>
-              <li><a href="/produtos/cortinas" className="hover:text-background transition-colors">Persianas Horizontais</a></li>
-              <li><a href="/produtos/tecidos" className="hover:text-background transition-colors">Tecido Acquablock</a></li>
-              <li><a href="/produtos/tecidos" className="hover:text-background transition-colors">Tecidos para Cortina</a></li>
-              <li><a href="/produtos/cortinas" className="hover:text-background transition-colors">Cortinas Modernas</a></li>
+              <li><a href="/produtos/tecidos" className="hover:text-background transition-colors">Tecidos</a></li>
+              <li><a href="/produtos/cortinas" className="hover:text-background transition-colors">Cortinas</a></li>
+              <li><a href="/produtos/pisos" className="hover:text-background transition-colors">Pisos</a></li>
+              <li><a href="/produtos/tapetes" className="hover:text-background transition-colors">Tapetes</a></li>
+              <li><a href="/produtos/papeis-de-parede" className="hover:text-background transition-colors">Papéis de Parede</a></li>
             </ul>
           </div>
 
@@ -63,14 +62,18 @@ export const Footer = () => {
             <h3 className="font-bold mb-4">Redes Sociais</h3>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/maxidecoracoes"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/maxidecoracoes"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
@@ -88,8 +91,10 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8 text-sm text-background/70 flex justify-between items-center">
+        <div className="border-t border-background/20 pt-8 text-sm text-background/70 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           <p>&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
+          <div className="hidden md:block"></div>
+          <div className="hidden md:block"></div>
           <p>
             Desenvolvido por{" "}
             <a 
