@@ -30,20 +30,22 @@ export const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">Produtos</h3>
             <ul className="space-y-2 text-sm text-background/70">
-              <li><a href="/produtos" className="hover:text-background transition-colors">Tecidos</a></li>
-              <li><a href="/produtos" className="hover:text-background transition-colors">Cortinas</a></li>
-              <li><a href="/produtos" className="hover:text-background transition-colors">Pisos</a></li>
-              <li><a href="/produtos" className="hover:text-background transition-colors">Tapetes</a></li>
-              <li><a href="/produtos" className="hover:text-background transition-colors">Papéis de Parede</a></li>
+              <li><a href="/produtos/pisos" className="hover:text-background transition-colors">Piso Laminado</a></li>
+              <li><a href="/produtos/pisos" className="hover:text-background transition-colors">Piso Vinílico</a></li>
+              <li><a href="/produtos/cortinas" className="hover:text-background transition-colors">Persianas Horizontais</a></li>
+              <li><a href="/produtos/tecidos" className="hover:text-background transition-colors">Tecido Acquablock</a></li>
+              <li><a href="/produtos/tecidos" className="hover:text-background transition-colors">Tecidos para Cortina</a></li>
+              <li><a href="/produtos/cortinas" className="hover:text-background transition-colors">Cortinas Modernas</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold mb-4">Empresa</h3>
             <ul className="space-y-2 text-sm text-background/70">
+              <li><a href="/" className="hover:text-background transition-colors">Início</a></li>
+              <li><a href="/produtos" className="hover:text-background transition-colors">Produtos</a></li>
               <li><a href="/sobre" className="hover:text-background transition-colors">Sobre Nós</a></li>
               <li><a href="/contato" className="hover:text-background transition-colors">Contato</a></li>
-              <li><a href="/politica-privacidade" className="hover:text-background transition-colors">Política de Privacidade</a></li>
               <li className="pt-2">
                 <a href="mailto:contato@maxidecoracoes.com.br" className="hover:text-background transition-colors">
                   contato@maxidecoracoes.com.br
@@ -75,29 +77,30 @@ export const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
+            
+            <div className="mt-6">
+              <h3 className="font-bold mb-4">Legal</h3>
+              <ul className="space-y-2 text-sm text-background/70">
+                <li><a href="/politica-privacidade" className="hover:text-background transition-colors">Política de Privacidade</a></li>
+                <li><a href="/termos-de-uso" className="hover:text-background transition-colors">Termos de Uso</a></li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-background/20 pt-8 text-sm text-background/70">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="md:col-span-1">
-              <p>&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
-            </div>
-            <div className="hidden md:block md:col-span-2"></div>
-            <div className="md:col-span-1 md:text-right">
-              <p>
-                Desenvolvido por{" "}
-                <a 
-                  href="https://idlab.art.br" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold"
-                >
-                  ID_Lab
-                </a>
-              </p>
-            </div>
-          </div>
+        <div className="border-t border-background/20 pt-8 text-sm text-background/70 flex justify-between items-center">
+          <p>&copy; {new Date().getFullYear()} Maxi Decorações. Todos os direitos reservados.</p>
+          <p>
+            Desenvolvido por{" "}
+            <a 
+              href="https://idlab.art.br" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold"
+            >
+              ID_Lab
+            </a>
+          </p>
         </div>
       </div>
     </footer>
