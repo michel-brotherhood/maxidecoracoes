@@ -99,7 +99,7 @@ const Index = () => {
         "about": {
           "@id": "https://maxi-decoracoes.lovable.app/#organization"
         },
-        "description": "30 anos oferecendo tecidos nobres, cortinas sob medida, pisos vinílicos, tapetes e papéis de parede no Rio de Janeiro. 6 lojas em Niterói, São Gonçalo e RJ."
+        "description": "60 anos oferecendo tecidos nobres, cortinas sob medida, pisos vinílicos, tapetes e papéis de parede no Rio de Janeiro. 6 lojas em Niterói, São Gonçalo e RJ."
       },
       {
         "@type": "ItemList",
