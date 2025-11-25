@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useEffect } from "react";
 
 export const FAQ = () => {
   const faqs = [
@@ -40,6 +41,40 @@ export const FAQ = () => {
       answer: "Sim, todos os nossos produtos possuem garantia do fabricante e garantimos a qualidade dos serviços de instalação realizados pela nossa equipe."
     }
   ];
+
+  // Add FAQPage Schema for rich snippets
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'faq-schema';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    });
+
+    // Remove existing schema if present
+    const existing = document.getElementById('faq-schema');
+    if (existing) {
+      existing.remove();
+    }
+
+    document.head.appendChild(script);
+
+    return () => {
+      const schemaElement = document.getElementById('faq-schema');
+      if (schemaElement) {
+        schemaElement.remove();
+      }
+    };
+  }, []);
 
   return (
     <section id="faq" className="py-16 sm:py-20 lg:py-24 bg-muted/30">

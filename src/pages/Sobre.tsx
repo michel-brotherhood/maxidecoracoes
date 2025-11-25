@@ -41,10 +41,93 @@ const values = [
 const Sobre = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "Sobre a Maxi Decorações",
-    "description": "Conheça nossa história: 60 anos de tradição em decoração de interiores, 6 lojas e mais de 5000 clientes atendidos",
-    "url": "https://maxi-decoracoes.lovable.app/sobre"
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "name": "Sobre a Maxi Decorações",
+        "description": "Conheça nossa história: 60 anos de tradição em decoração de interiores, 6 lojas e mais de 5000 clientes atendidos",
+        "url": "https://maxi-decoracoes.lovable.app/sobre",
+        "mainEntity": {
+          "@id": "https://maxi-decoracoes.lovable.app/#organization"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://maxi-decoracoes.lovable.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Sobre",
+              "item": "https://maxi-decoracoes.lovable.app/sobre"
+            }
+          ]
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://maxi-decoracoes.lovable.app/#organization",
+        "legalName": "Maxi Decoracoes Ltda",
+        "name": "Maxi Decorações",
+        "foundingDate": "1960",
+        "vatID": "32.572.893/0001-36",
+        "description": "Com mais de 60 anos de experiência, a Maxi Decorações é referência em decoração de interiores no Rio de Janeiro, oferecendo produtos de alta qualidade e atendimento especializado.",
+        "slogan": "60 anos transformando ambientes com qualidade e tradição",
+        "telephone": "+55-21-2622-0754",
+        "email": "contato@maxidecoracoes.com.br",
+        "url": "https://maxi-decoracoes.lovable.app/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://maxi-decoracoes.lovable.app/favicon.webp"
+        },
+        "numberOfEmployees": {
+          "@type": "QuantitativeValue",
+          "value": "50+"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Miguel de Frias, 40, loja 101",
+          "addressLocality": "Niterói",
+          "addressRegion": "RJ",
+          "postalCode": "24220-002",
+          "addressCountry": "BR"
+        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Niterói"
+          },
+          {
+            "@type": "City",
+            "name": "São Gonçalo"
+          },
+          {
+            "@type": "City",
+            "name": "Rio de Janeiro"
+          }
+        ],
+        "knowsAbout": [
+          "Decoração de Interiores",
+          "Cortinas sob medida",
+          "Tecidos decorativos",
+          "Pisos vinílicos",
+          "Tapetes e carpetes",
+          "Papéis de parede",
+          "Persianas"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "5000",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    ]
   };
 
   return (

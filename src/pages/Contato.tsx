@@ -80,16 +80,105 @@ const Contato = () => {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contato - Maxi Decorações",
-    "description": "Entre em contato com a Maxi Decorações. 6 lojas no Rio de Janeiro: Niterói (Icaraí, Centro), São Gonçalo e Tijuca. WhatsApp (21) 2622-0754, email contato@maxidecoracoes.com.br",
-    "url": "https://maxi-decoracoes.lovable.app/contato",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "Maxi Decorações",
-      "telephone": "+55-21-2622-0754",
-      "email": "contato@maxidecoracoes.com.br"
-    }
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "name": "Contato - Maxi Decorações",
+        "description": "Entre em contato com a Maxi Decorações. 6 lojas no Rio de Janeiro: Niterói (Icaraí, Centro), São Gonçalo e Tijuca. WhatsApp (21) 2622-0754, email contato@maxidecoracoes.com.br",
+        "url": "https://maxi-decoracoes.lovable.app/contato",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Maxi Decorações",
+          "telephone": "+55-21-2622-0754",
+          "email": "contato@maxidecoracoes.com.br"
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://maxi-decoracoes.lovable.app/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Contato",
+              "item": "https://maxi-decoracoes.lovable.app/contato"
+            }
+          ]
+        }
+      },
+      // Individual store schemas
+      ...stores.map((store) => {
+        const [longitude, latitude] = store.coordinates;
+        const addressParts = store.address.split(',');
+        const streetAddress = addressParts[0]?.trim() || '';
+        const cepMatch = store.address.match(/CEP\s*(\d{5}-\d{3})/);
+        const postalCode = cepMatch ? cepMatch[1] : '';
+        
+        let city = "Niterói";
+        if (store.address.includes("São Gonçalo")) city = "São Gonçalo";
+        if (store.address.includes("Rio de Janeiro") || store.address.includes("Tijuca")) city = "Rio de Janeiro";
+
+        const parseOpeningHours = (hoursString: string) => {
+          const specs = [];
+          const parts = hoursString.split('|');
+          
+          parts.forEach(part => {
+            const trimmed = part.trim();
+            if (trimmed.startsWith('Seg-Sex:')) {
+              const hours = trimmed.replace('Seg-Sex:', '').trim();
+              const [open, close] = hours.split('-').map(h => h.trim());
+              specs.push({
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": open,
+                "closes": close
+              });
+            } else if (trimmed.startsWith('Sáb:')) {
+              const hours = trimmed.replace('Sáb:', '').trim();
+              const [open, close] = hours.split('-').map(h => h.trim());
+              specs.push({
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": open,
+                "closes": close
+              });
+            }
+          });
+          
+          return specs;
+        };
+
+        return {
+          "@type": "Store",
+          "@id": `https://maxi-decoracoes.lovable.app/#store-${store.name.toLowerCase().replace(/\s+/g, '-')}`,
+          "name": `Maxi Decorações - ${store.name}`,
+          "parentOrganization": {
+            "@id": "https://maxi-decoracoes.lovable.app/#organization"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": streetAddress,
+            "addressLocality": city,
+            "addressRegion": "RJ",
+            "postalCode": postalCode,
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": latitude.toString(),
+            "longitude": longitude.toString()
+          },
+          "telephone": store.phone.split('|')[0].trim(),
+          "openingHoursSpecification": parseOpeningHours(store.hours),
+          ...(store.specialty && { "description": store.specialty }),
+          ...(store.highlight && { "additionalType": "https://schema.org/FlagshipStore" })
+        };
+      })
+    ]
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
