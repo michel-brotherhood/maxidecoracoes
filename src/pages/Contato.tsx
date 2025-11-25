@@ -85,7 +85,7 @@ const Contato = () => {
         "@type": "ContactPage",
         "name": "Contato - Maxi Decorações",
         "description": "Entre em contato com a Maxi Decorações. 6 lojas no Rio de Janeiro: Niterói (Icaraí, Centro), São Gonçalo e Tijuca. WhatsApp (21) 2622-0754, email contato@maxidecoracoes.com.br",
-        "url": "https://maxi-decoracoes.lovable.app/contato",
+        "url": "https://maxidecoracoes.com.br/contato",
         "mainEntity": {
           "@type": "Organization",
           "name": "Maxi Decorações",
@@ -99,13 +99,13 @@ const Contato = () => {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://maxi-decoracoes.lovable.app/"
+              "item": "https://maxidecoracoes.com.br/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Contato",
-              "item": "https://maxi-decoracoes.lovable.app/contato"
+              "item": "https://maxidecoracoes.com.br/contato"
             }
           ]
         }
@@ -154,10 +154,10 @@ const Contato = () => {
 
         return {
           "@type": "Store",
-          "@id": `https://maxi-decoracoes.lovable.app/#store-${store.name.toLowerCase().replace(/\s+/g, '-')}`,
+          "@id": `https://maxidecoracoes.com.br/#store-${store.name.toLowerCase().replace(/\s+/g, '-')}`,
           "name": `Maxi Decorações - ${store.name}`,
           "parentOrganization": {
-            "@id": "https://maxi-decoracoes.lovable.app/#organization"
+            "@id": "https://maxidecoracoes.com.br/#organization"
           },
           "address": {
             "@type": "PostalAddress",
@@ -227,7 +227,7 @@ const Contato = () => {
         title="Contato | Maxi Decorações - 6 Lojas no Rio de Janeiro"
         description="Entre em contato com a Maxi Decorações. 6 lojas em Niterói, São Gonçalo e Tijuca. WhatsApp (21) 2622-0754. Atendimento especializado em decoração de interiores."
         keywords="contato maxi decorações, lojas niterói, lojas são gonçalo, whatsapp decoração, endereço loja decoração rio de janeiro"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/contato"
+        canonicalUrl="https://maxidecoracoes.com.br/contato"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

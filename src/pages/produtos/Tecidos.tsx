@@ -61,25 +61,25 @@ const Tecidos = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Início",
-            "item": "https://maxi-decoracoes.lovable.app/"
+            "item": "https://maxidecoracoes.com.br/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Produtos",
-            "item": "https://maxi-decoracoes.lovable.app/produtos"
+            "item": "https://maxidecoracoes.com.br/produtos"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Tecidos",
-            "item": "https://maxi-decoracoes.lovable.app/produtos/tecidos"
+            "item": "https://maxidecoracoes.com.br/produtos/tecidos"
           }
         ]
       },
       {
         "@type": "Product",
-        "@id": "https://maxi-decoracoes.lovable.app/produtos/tecidos#product",
+        "@id": "https://maxidecoracoes.com.br/produtos/tecidos#product",
         "name": "Tecidos para Decoração e Estofamento",
         "description": "Ampla variedade de tecidos nobres: decorativos, estofados, veludos, linhos, blackout. Marcas Karsten, Döhler, Edantex. Tecidos especializados AquaBlock, WaterBlock e AquaTec para proteção contra água e manchas.",
         "image": "https://maxi-decoracoes.lovable.app/tecidos-1.png",
@@ -167,7 +167,7 @@ const Tecidos = () => {
         title="Tecidos para Decoração e Estofamento | Karsten, Döhler - Maxi"
         description="Ampla variedade de tecidos nobres para decoração e estofamento: veludos, linhos, blackout, tecidos impermeáveis. Marcas Karsten, Döhler, Edantex. Consultoria especializada no RJ."
         keywords="tecidos decoração, tecidos estofamento, veludo, linho, blackout, karsten, döhler, tecidos rio de janeiro"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/tecidos"
+        canonicalUrl="https://maxidecoracoes.com.br/produtos/tecidos"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

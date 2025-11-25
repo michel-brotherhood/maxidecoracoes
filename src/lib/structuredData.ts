@@ -2,18 +2,18 @@
 
 export const getOrganizationSchema = () => ({
   "@type": "Organization",
-  "@id": "https://maxi-decoracoes.lovable.app/#organization",
+  "@id": "https://maxidecoracoes.com.br/#organization",
   "legalName": "Maxi Decoracoes Ltda",
   "name": "Maxi Decorações",
   "alternateName": "MAXI Decorações",
-  "url": "https://maxi-decoracoes.lovable.app/",
+  "url": "https://maxidecoracoes.com.br/",
   "logo": {
     "@type": "ImageObject",
-    "url": "https://maxi-decoracoes.lovable.app/favicon.webp",
+    "url": "https://maxidecoracoes.com.br/favicon.webp",
     "width": "512",
     "height": "512"
   },
-  "image": "https://maxi-decoracoes.lovable.app/favicon.webp",
+  "image": "https://maxidecoracoes.com.br/favicon.webp",
   "description": "Líder em decoração de interiores com mais de 60 anos de tradição (fundada em 1960). Especializada em cortinas sob medida com ateliê próprio, tecidos nobres para decoração e estofamento, pisos vinílicos e laminados, tapetes decorativos e carpetes, papéis de parede e cama mesa e banho. 6 lojas no Rio de Janeiro.",
   "foundingDate": "1960",
   "slogan": "60 anos transformando ambientes com qualidade e tradição",
@@ -98,10 +98,10 @@ export const getLocalBusinessSchema = (store: StoreData) => {
 
   return {
     "@type": "Store",
-    "@id": `https://maxi-decoracoes.lovable.app/#store-${store.name.toLowerCase().replace(/\s+/g, '-')}`,
+    "@id": `https://maxidecoracoes.com.br/#store-${store.name.toLowerCase().replace(/\s+/g, '-')}`,
     "name": `Maxi Decorações - ${store.name}`,
     "parentOrganization": {
-      "@id": "https://maxi-decoracoes.lovable.app/#organization"
+      "@id": "https://maxidecoracoes.com.br/#organization"
     },
     "address": {
       "@type": "PostalAddress",

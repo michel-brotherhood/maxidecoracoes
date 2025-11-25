@@ -107,7 +107,7 @@ const Produtos = () => {
     "@type": "CollectionPage",
     "name": "Produtos de Decoração - Maxi Decorações",
     "description": "Catálogo completo de produtos para decoração: tecidos nobres, cortinas sob medida com ateliê próprio, persianas, pisos vinílicos, tapetes decorativos, papéis de parede e cama mesa banho. 60 anos de experiência.",
-    "url": "https://maxi-decoracoes.lovable.app/produtos",
+    "url": "https://maxidecoracoes.com.br/produtos",
     "mainEntity": {
       "@type": "ItemList",
       "numberOfItems": 6,
@@ -116,37 +116,37 @@ const Produtos = () => {
           "@type": "ListItem",
           "position": 1,
           "name": "Tecidos para Decoração",
-          "url": "https://maxi-decoracoes.lovable.app/produtos/tecidos"
+          "url": "https://maxidecoracoes.com.br/produtos/tecidos"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Cortinas e Persianas Sob Medida",
-          "url": "https://maxi-decoracoes.lovable.app/produtos/cortinas"
+          "url": "https://maxidecoracoes.com.br/produtos/cortinas"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Pisos Vinílicos e Laminados",
-          "url": "https://maxi-decoracoes.lovable.app/produtos/pisos"
+          "url": "https://maxidecoracoes.com.br/produtos/pisos"
         },
         {
           "@type": "ListItem",
           "position": 4,
           "name": "Tapetes Decorativos",
-          "url": "https://maxi-decoracoes.lovable.app/produtos/tapetes"
+          "url": "https://maxidecoracoes.com.br/produtos/tapetes"
         },
         {
           "@type": "ListItem",
           "position": 5,
           "name": "Papéis de Parede",
-          "url": "https://maxi-decoracoes.lovable.app/produtos/papeis-de-parede"
+          "url": "https://maxidecoracoes.com.br/produtos/papeis-de-parede"
         },
         {
           "@type": "ListItem",
           "position": 6,
           "name": "Cama Mesa e Banho",
-          "url": "https://maxi-decoracoes.lovable.app/produtos/cama-mesa-banho"
+          "url": "https://maxidecoracoes.com.br/produtos/cama-mesa-banho"
         }
       ]
     }
@@ -158,8 +158,8 @@ const Produtos = () => {
         title="Produtos para Decoração de Interiores | Cortinas, Tecidos, Pisos - Maxi"
         description="Catálogo premium de decoração: tecidos nobres importados e nacionais, cortinas sob medida (ateliê próprio), persianas, pisos vinílicos, tapetes decorativos, papéis de parede e cama mesa banho. 60 anos de tradição."
         keywords="produtos decoração, catálogo decoração rio de janeiro, tecidos importados, cortinas sob medida niterói, pisos vinílicos, tapetes decorativos, papéis de parede aplicação profissional"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos"
-        ogImage="https://maxi-decoracoes.lovable.app/favicon.webp"
+        canonicalUrl="https://maxidecoracoes.com.br/produtos"
+        ogImage="https://maxidecoracoes.com.br/favicon.webp"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

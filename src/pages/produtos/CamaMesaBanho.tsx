@@ -30,25 +30,25 @@ const CamaMesaBanho = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Início",
-            "item": "https://maxi-decoracoes.lovable.app/"
+            "item": "https://maxidecoracoes.com.br/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Produtos",
-            "item": "https://maxi-decoracoes.lovable.app/produtos"
+            "item": "https://maxidecoracoes.com.br/produtos"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Cama Mesa e Banho",
-            "item": "https://maxi-decoracoes.lovable.app/produtos/cama-mesa-banho"
+            "item": "https://maxidecoracoes.com.br/produtos/cama-mesa-banho"
           }
         ]
       },
       {
         "@type": "Product",
-        "@id": "https://maxi-decoracoes.lovable.app/produtos/cama-mesa-banho#product",
+        "@id": "https://maxidecoracoes.com.br/produtos/cama-mesa-banho#product",
         "name": "Cama, Mesa e Banho Premium",
         "description": "Produtos de alta qualidade para cama, mesa e banho. Lençóis, edredons, toalhas, cortinas de box e acessórios. Marcas renomadas e designs exclusivos para conforto e sofisticação.",
         "image": "https://maxi-decoracoes.lovable.app/cama-mesa-banho-1.png",
@@ -107,7 +107,7 @@ const CamaMesaBanho = () => {
         title="Cama Mesa & Banho | Enxovais e Toalhas de Alta Qualidade"
         description="Roupa de cama, toalhas de banho, toalhas de mesa, edredons e colchas. Enxovais completos, marcas renomadas. Presente ideal com conforto e sofisticação no RJ."
         keywords="roupa de cama, toalhas banho, toalhas mesa, enxoval, edredon, colcha, cama mesa banho, rio de janeiro"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/cama-mesa-banho"
+        canonicalUrl="https://maxidecoracoes.com.br/produtos/cama-mesa-banho"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

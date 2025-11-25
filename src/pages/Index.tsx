@@ -16,18 +16,18 @@ const Index = () => {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://maxi-decoracoes.lovable.app/#organization",
+        "@id": "https://maxidecoracoes.com.br/#organization",
         "legalName": "Maxi Decoracoes Ltda",
         "name": "Maxi Decorações",
         "alternateName": "MAXI Decorações",
-        "url": "https://maxi-decoracoes.lovable.app/",
+        "url": "https://maxidecoracoes.com.br/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://maxi-decoracoes.lovable.app/favicon.webp",
+          "url": "https://maxidecoracoes.com.br/favicon.webp",
           "width": "512",
           "height": "512"
         },
-        "image": "https://maxi-decoracoes.lovable.app/favicon.webp",
+        "image": "https://maxidecoracoes.com.br/favicon.webp",
         "description": "Líder em decoração de interiores com mais de 60 anos de tradição (fundada em 1960). Especializada em cortinas sob medida com ateliê próprio, tecidos nobres para decoração e estofamento, pisos vinílicos e laminados, tapetes decorativos e carpetes, papéis de parede e cama mesa e banho. 6 lojas no Rio de Janeiro.",
         "foundingDate": "1960",
         "slogan": "60 anos transformando ambientes com qualidade e tradição",
@@ -69,35 +69,35 @@ const Index = () => {
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://maxi-decoracoes.lovable.app/produtos?q={search_term_string}"
+            "urlTemplate": "https://maxidecoracoes.com.br/produtos?q={search_term_string}"
           },
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "WebSite",
-        "@id": "https://maxi-decoracoes.lovable.app/#website",
-        "url": "https://maxi-decoracoes.lovable.app/",
+        "@id": "https://maxidecoracoes.com.br/#website",
+        "url": "https://maxidecoracoes.com.br/",
         "name": "Maxi Decorações",
         "publisher": {
-          "@id": "https://maxi-decoracoes.lovable.app/#organization"
+          "@id": "https://maxidecoracoes.com.br/#organization"
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://maxi-decoracoes.lovable.app/produtos?q={search_term_string}",
+          "target": "https://maxidecoracoes.com.br/produtos?q={search_term_string}",
           "query-input": "required name=search_term_string"
         }
       },
       {
         "@type": "WebPage",
-        "@id": "https://maxi-decoracoes.lovable.app/#webpage",
-        "url": "https://maxi-decoracoes.lovable.app/",
+        "@id": "https://maxidecoracoes.com.br/#webpage",
+        "url": "https://maxidecoracoes.com.br/",
         "name": "Maxi Decorações - Cortinas, Tecidos, Pisos e Tapetes no RJ",
         "isPartOf": {
-          "@id": "https://maxi-decoracoes.lovable.app/#website"
+          "@id": "https://maxidecoracoes.com.br/#website"
         },
         "about": {
-          "@id": "https://maxi-decoracoes.lovable.app/#organization"
+          "@id": "https://maxidecoracoes.com.br/#organization"
         },
         "description": "60 anos oferecendo tecidos nobres, cortinas sob medida, pisos vinílicos, tapetes e papéis de parede no Rio de Janeiro. 6 lojas em Niterói, São Gonçalo e RJ."
       },
@@ -108,37 +108,37 @@ const Index = () => {
             "@type": "SiteNavigationElement",
             "position": 1,
             "name": "Tecidos para Decoração",
-            "url": "https://maxi-decoracoes.lovable.app/produtos/tecidos"
+            "url": "https://maxidecoracoes.com.br/produtos/tecidos"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 2,
             "name": "Cortinas Sob Medida",
-            "url": "https://maxi-decoracoes.lovable.app/produtos/cortinas"
+            "url": "https://maxidecoracoes.com.br/produtos/cortinas"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 3,
             "name": "Pisos Vinílicos",
-            "url": "https://maxi-decoracoes.lovable.app/produtos/pisos"
+            "url": "https://maxidecoracoes.com.br/produtos/pisos"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 4,
             "name": "Tapetes",
-            "url": "https://maxi-decoracoes.lovable.app/produtos/tapetes"
+            "url": "https://maxidecoracoes.com.br/produtos/tapetes"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 5,
             "name": "Papéis de Parede",
-            "url": "https://maxi-decoracoes.lovable.app/produtos/papeis-de-parede"
+            "url": "https://maxidecoracoes.com.br/produtos/papeis-de-parede"
           },
           {
             "@type": "SiteNavigationElement",
             "position": 6,
             "name": "Cama Mesa e Banho",
-            "url": "https://maxi-decoracoes.lovable.app/produtos/cama-mesa-banho"
+            "url": "https://maxidecoracoes.com.br/produtos/cama-mesa-banho"
           }
         ]
       }
@@ -151,8 +151,8 @@ const Index = () => {
         title="Maxi Decorações - Cortinas, Tecidos, Pisos e Tapetes no RJ | 60 Anos"
         description="Mais de 60 anos transformando ambientes com cortinas sob medida (ateliê próprio), tecidos nobres, pisos vinílicos, tapetes e papéis de parede. 6 lojas no Rio de Janeiro: Niterói, São Gonçalo e Tijuca. Instalação profissional."
         keywords="cortinas sob medida niterói, tecidos decoração rio de janeiro, pisos vinílicos rj, tapetes decorativos, persianas horizontais, persianas rolô, papéis de parede, cortinas blackout, persiana vertical, maxi decorações, ateliê cortinas niterói"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/"
-        ogImage="https://maxi-decoracoes.lovable.app/favicon.webp"
+        canonicalUrl="https://maxidecoracoes.com.br/"
+        ogImage="https://maxidecoracoes.com.br/favicon.webp"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

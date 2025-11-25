@@ -9,7 +9,7 @@ const PoliticaPrivacidade = () => {
       <SEO
         title="Política de Privacidade - Maxi Decorações"
         description="Política de Privacidade e Proteção de Dados da Maxi Decorações conforme LGPD"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/politica-privacidade"
+        canonicalUrl="https://maxidecoracoes.com.br/politica-privacidade"
       />
       <div className="min-h-screen">
         <Navigation />
