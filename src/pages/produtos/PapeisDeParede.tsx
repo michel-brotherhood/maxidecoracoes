@@ -27,25 +27,25 @@ const PapeisDeParede = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Início",
-            "item": "https://maxi-decoracoes.lovable.app/"
+            "item": "https://maxidecoracoes.com.br/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Produtos",
-            "item": "https://maxi-decoracoes.lovable.app/produtos"
+            "item": "https://maxidecoracoes.com.br/produtos"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Papéis de Parede",
-            "item": "https://maxi-decoracoes.lovable.app/produtos/papeis-de-parede"
+            "item": "https://maxidecoracoes.com.br/produtos/papeis-de-parede"
           }
         ]
       },
       {
         "@type": "Product",
-        "@id": "https://maxi-decoracoes.lovable.app/produtos/papeis-de-parede#product",
+        "@id": "https://maxidecoracoes.com.br/produtos/papeis-de-parede#product",
         "name": "Papéis de Parede Decorativos",
         "description": "Transforme seus ambientes com nossa coleção premium de papéis de parede. Diversos estilos, texturas e padrões: 3D, geométricos, florais, infantis. Instalação profissional e consultoria de design.",
         "image": "https://maxi-decoracoes.lovable.app/papeis-parede-1.png",
@@ -102,7 +102,7 @@ const PapeisDeParede = () => {
         title="Papéis de Parede Modernos e Clássicos | Aplicação Profissional"
         description="Papéis de parede decorativos: vinílicos, texturizados, 3D, importados e autoadesivos. Aplicação profissional, coleções exclusivas. Consultoria de design no Rio de Janeiro."
         keywords="papel de parede, papel vinílico, papel 3D, papel texturizado, papel importado, aplicação papel parede, rio de janeiro"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/papeis-de-parede"
+        canonicalUrl="https://maxidecoracoes.com.br/produtos/papeis-de-parede"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

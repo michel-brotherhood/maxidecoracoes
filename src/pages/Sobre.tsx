@@ -46,7 +46,7 @@ const Sobre = () => {
         "@type": "AboutPage",
         "name": "Sobre a Maxi Decorações",
         "description": "Conheça nossa história: 60 anos de tradição em decoração de interiores, 6 lojas e mais de 5000 clientes atendidos",
-        "url": "https://maxi-decoracoes.lovable.app/sobre",
+        "url": "https://maxidecoracoes.com.br/sobre",
         "mainEntity": {
           "@id": "https://maxi-decoracoes.lovable.app/#organization"
         },
@@ -57,20 +57,20 @@ const Sobre = () => {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://maxi-decoracoes.lovable.app/"
+              "item": "https://maxidecoracoes.com.br/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Sobre",
-              "item": "https://maxi-decoracoes.lovable.app/sobre"
+              "item": "https://maxidecoracoes.com.br/sobre"
             }
           ]
         }
       },
       {
         "@type": "Organization",
-        "@id": "https://maxi-decoracoes.lovable.app/#organization",
+        "@id": "https://maxidecoracoes.com.br/#organization",
         "legalName": "Maxi Decoracoes Ltda",
         "name": "Maxi Decorações",
         "foundingDate": "1960",
@@ -79,10 +79,10 @@ const Sobre = () => {
         "slogan": "60 anos transformando ambientes com qualidade e tradição",
         "telephone": "+55-21-2622-0754",
         "email": "contato@maxidecoracoes.com.br",
-        "url": "https://maxi-decoracoes.lovable.app/",
+        "url": "https://maxidecoracoes.com.br/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://maxi-decoracoes.lovable.app/favicon.webp"
+          "url": "https://maxidecoracoes.com.br/favicon.webp"
         },
         "numberOfEmployees": {
           "@type": "QuantitativeValue",
@@ -136,7 +136,7 @@ const Sobre = () => {
         title="Sobre a Maxi Decorações | 60 Anos em Decoração de Interiores"
         description="60 anos de experiência em decoração. 6 lojas no Rio de Janeiro, 5000+ clientes atendidos. Conheça nossa história, missão, visão e valores em decoração de interiores premium."
         keywords="sobre maxi decorações, história, empresa decoração, rio de janeiro, niterói, são gonçalo"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/sobre"
+        canonicalUrl="https://maxidecoracoes.com.br/sobre"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

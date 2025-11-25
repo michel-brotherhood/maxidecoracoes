@@ -57,25 +57,25 @@ const Tapetes = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Início",
-            "item": "https://maxi-decoracoes.lovable.app/"
+            "item": "https://maxidecoracoes.com.br/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Produtos",
-            "item": "https://maxi-decoracoes.lovable.app/produtos"
+            "item": "https://maxidecoracoes.com.br/produtos"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Tapetes",
-            "item": "https://maxi-decoracoes.lovable.app/produtos/tapetes"
+            "item": "https://maxidecoracoes.com.br/produtos/tapetes"
           }
         ]
       },
       {
         "@type": "Product",
-        "@id": "https://maxi-decoracoes.lovable.app/produtos/tapetes#product",
+        "@id": "https://maxidecoracoes.com.br/produtos/tapetes#product",
         "name": "Tapetes e Carpetes Decorativos",
         "description": "Ampla variedade de tapetes e carpetes para todos os ambientes. Materiais sustentáveis, designs exclusivos e tecnologia de alta durabilidade. Marcas São Carlos, Edantex e Niazitex.",
         "image": "https://maxi-decoracoes.lovable.app/tapetes-1.png",
@@ -151,7 +151,7 @@ const Tapetes = () => {
         title="Tapetes Decorativos e Carpetes | São Carlos, Edantex - Maxi"
         description="Tapetes decorativos para sala, quarto e comerciais. Carpetes residenciais. Marcas São Carlos, Edantex, Niazitex. Produção sustentável, instalação profissional no RJ."
         keywords="tapetes decorativos, carpetes, tapetes sala, tapetes quarto, são carlos, edantex, tapetes rio de janeiro"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/tapetes"
+        canonicalUrl="https://maxidecoracoes.com.br/produtos/tapetes"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

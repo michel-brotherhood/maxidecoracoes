@@ -57,25 +57,25 @@ const Pisos = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Início",
-            "item": "https://maxi-decoracoes.lovable.app/"
+            "item": "https://maxidecoracoes.com.br/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Produtos",
-            "item": "https://maxi-decoracoes.lovable.app/produtos"
+            "item": "https://maxidecoracoes.com.br/produtos"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Pisos",
-            "item": "https://maxi-decoracoes.lovable.app/produtos/pisos"
+            "item": "https://maxidecoracoes.com.br/produtos/pisos"
           }
         ]
       },
       {
         "@type": "Product",
-        "@id": "https://maxi-decoracoes.lovable.app/produtos/pisos#product",
+        "@id": "https://maxidecoracoes.com.br/produtos/pisos#product",
         "name": "Pisos Vinílicos e Laminados",
         "description": "Pisos vinílicos e laminados de alta qualidade com fácil instalação e manutenção. Marcas premium Durafloor e Eucatex. Resistentes, duráveis e com variedade de texturas que imitam madeira e pedra.",
         "image": "https://maxi-decoracoes.lovable.app/pisos-1.png",
@@ -147,7 +147,7 @@ const Pisos = () => {
         title="Pisos Vinílicos e Laminados | Eucatex, Durafloor - Maxi RJ"
         description="Pisos vinílicos LVT, laminados, hospitalares e para academias. Marcas Eucatex, Durafloor, Tarkett. Materiais sustentáveis, instalação profissional no Rio de Janeiro."
         keywords="piso vinílico, piso laminado, piso hospitalar, eucatex, durafloor, tarkett, pisos rio de janeiro"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/pisos"
+        canonicalUrl="https://maxidecoracoes.com.br/produtos/pisos"
         structuredData={structuredData}
       />
       <div className="min-h-screen">

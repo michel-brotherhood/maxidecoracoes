@@ -55,25 +55,25 @@ const Cortinas = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Início",
-            "item": "https://maxi-decoracoes.lovable.app/"
+            "item": "https://maxidecoracoes.com.br/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Produtos",
-            "item": "https://maxi-decoracoes.lovable.app/produtos"
+            "item": "https://maxidecoracoes.com.br/produtos"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Cortinas",
-            "item": "https://maxi-decoracoes.lovable.app/produtos/cortinas"
+            "item": "https://maxidecoracoes.com.br/produtos/cortinas"
           }
         ]
       },
       {
         "@type": "Product",
-        "@id": "https://maxi-decoracoes.lovable.app/produtos/cortinas#product",
+        "@id": "https://maxidecoracoes.com.br/produtos/cortinas#product",
         "name": "Cortinas Sob Medida e Persianas",
         "description": "Cortinas personalizadas e persianas para todos os ambientes. Design exclusivo, instalação profissional e consultoria especializada. Variedade de estilos: romanas, rolô, trilho, varal e persianas.",
         "image": "https://maxi-decoracoes.lovable.app/cortinas-1.png",
@@ -137,7 +137,7 @@ const Cortinas = () => {
         title="Cortinas Sob Medida e Persianas | Ateliê Próprio - Maxi RJ"
         description="Cortinas sob medida e persianas no RJ: ateliê próprio, medição gratuita, instalação profissional. Blackout, rolô, horizontais, verticais. Automação disponível. 30 anos de experiência."
         keywords="cortinas sob medida, persianas, blackout, persianas rolô, cortinas rio de janeiro, trilho suisso, automação cortinas"
-        canonicalUrl="https://maxi-decoracoes.lovable.app/produtos/cortinas"
+        canonicalUrl="https://maxidecoracoes.com.br/produtos/cortinas"
         structuredData={structuredData}
       />
       <div className="min-h-screen">
