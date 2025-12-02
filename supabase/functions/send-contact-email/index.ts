@@ -172,7 +172,7 @@ Deno.serve(async (req: Request): Promise<Response> => {
                   </div>
 
                   <p style="margin-top: 30px; font-size: 14px; color: #666;">
-                    Estamos há mais de 30 anos oferecendo os melhores produtos em decoração de interiores. Será um prazer atendê-lo!
+                    Estamos há mais de 60 anos oferecendo os melhores produtos em decoração de interiores. Será um prazer atendê-lo!
                   </p>
 
                   <div class="footer">
