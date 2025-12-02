@@ -124,7 +124,19 @@ export const Contact = () => {
         body: formData,
       });
 
-      if (error) throw error;
+      if (error) {
+        // Check if it's a validation error from the server
+        if (data?.details?.length > 0) {
+          toast({
+            variant: "destructive",
+            title: "Erro de validação",
+            description: data.details[0].message,
+          });
+        } else {
+          throw error;
+        }
+        return;
+      }
 
       toast({
         title: "Mensagem enviada!",
