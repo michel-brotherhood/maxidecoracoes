@@ -12,6 +12,7 @@ import { MapPin, Phone, Clock, Mail, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const stores = [
   {
@@ -194,10 +195,33 @@ const Contato = () => {
 
       console.log("Enviando formulário:", { ...formData, privacyAccepted: formData.privacyAccepted });
 
-      const { supabase } = await import("@/integrations/supabase/client");
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
-      });
+      // Verificar se o cliente Supabase está inicializado
+      if (!supabase) {
+        console.error("Supabase client not initialized");
+        toast({
+          variant: "destructive",
+          title: "Erro de configuração",
+          description: "Não foi possível conectar ao servidor. Por favor, recarregue a página.",
+        });
+        return;
+      }
+
+      let data, error;
+      try {
+        const response = await supabase.functions.invoke("send-contact-email", {
+          body: formData,
+        });
+        data = response.data;
+        error = response.error;
+      } catch (networkError) {
+        console.error("Erro de rede ao invocar edge function:", networkError);
+        toast({
+          variant: "destructive",
+          title: "Erro de conexão",
+          description: "Verifique sua conexão com a internet e tente novamente.",
+        });
+        return;
+      }
 
       console.log("Resposta da edge function:", { data, error });
 
