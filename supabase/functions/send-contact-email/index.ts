@@ -1,6 +1,7 @@
 /// <reference types="https://esm.sh/@supabase/functions-js/src/edge-runtime.d.ts" />
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.76.1';
+import { z } from 'https://deno.land/x/zod@v3.22.4/mod.ts';
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -15,6 +16,13 @@ interface ContactEmailRequest {
   message: string;
 }
 
+const contactSchema = z.object({
+  name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
+  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
+  phone: z.string().trim().min(10, "Phone must be at least 10 characters").max(20, "Phone must be less than 20 characters"),
+  message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters")
+});
+
 Deno.serve(async (req: Request): Promise<Response> => {
   console.log("Contact email function invoked");
 
@@ -24,7 +32,26 @@ Deno.serve(async (req: Request): Promise<Response> => {
   }
 
   try {
-    const { name, email, phone, message }: ContactEmailRequest = await req.json();
+    const body = await req.json();
+    
+    // Validate input data
+    const validationResult = contactSchema.safeParse(body);
+    if (!validationResult.success) {
+      console.error("Validation failed:", validationResult.error);
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "Invalid input data",
+          details: validationResult.error.issues
+        }),
+        {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        }
+      );
+    }
+
+    const { name, email, phone, message }: ContactEmailRequest = validationResult.data;
     console.log("Processing contact request from:", email);
 
     // Initialize Supabase client
