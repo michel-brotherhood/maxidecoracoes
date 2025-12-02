@@ -1,5 +1,7 @@
 /// <reference types="https://esm.sh/@supabase/functions-js/src/edge-runtime.d.ts" />
 
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.76.1';
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers":
@@ -24,6 +26,28 @@ Deno.serve(async (req: Request): Promise<Response> => {
   try {
     const { name, email, phone, message }: ContactEmailRequest = await req.json();
     console.log("Processing contact request from:", email);
+
+    // Initialize Supabase client
+    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
+    // Save to database
+    const { error: dbError } = await supabase
+      .from('contact_messages')
+      .insert({
+        name,
+        email,
+        phone,
+        message
+      });
+
+    if (dbError) {
+      console.error("Error saving to database:", dbError);
+      throw new Error(`Failed to save message to database: ${dbError.message}`);
+    }
+
+    console.log("Message saved to database successfully");
 
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (!RESEND_API_KEY) {
