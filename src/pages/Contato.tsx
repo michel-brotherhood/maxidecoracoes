@@ -192,25 +192,49 @@ const Contato = () => {
     try {
       contactSchema.parse(formData);
 
+      console.log("Enviando formulário:", { ...formData, privacyAccepted: formData.privacyAccepted });
+
       const { supabase } = await import("@/integrations/supabase/client");
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
         body: formData,
       });
 
+      console.log("Resposta da edge function:", { data, error });
+
+      // Check for HTTP/network errors
       if (error) {
-        // Check if it's a validation error from the server
-        if (data?.details?.length > 0) {
+        console.error("Erro HTTP/rede:", error);
+        toast({
+          variant: "destructive",
+          title: "Erro de conexão",
+          description: error.message || "Não foi possível conectar ao servidor. Tente novamente.",
+        });
+        return;
+      }
+
+      // Check for application-level errors from the edge function
+      if (data?.success === false) {
+        console.error("Erro da aplicação:", data);
+        
+        if (data.details?.length > 0) {
+          // Validation error
           toast({
             variant: "destructive",
             title: "Erro de validação",
             description: data.details[0].message,
           });
         } else {
-          throw error;
+          toast({
+            variant: "destructive",
+            title: "Erro ao enviar",
+            description: data.error || "Ocorreu um erro. Tente novamente.",
+          });
         }
         return;
       }
 
+      // Success!
+      console.log("Mensagem enviada com sucesso!");
       toast({
         title: "Mensagem enviada com sucesso!",
         description: "Recebemos sua mensagem e entraremos em contato em breve.",
@@ -225,7 +249,7 @@ const Contato = () => {
           description: error.issues[0].message,
         });
       } else {
-        console.error("Error sending email:", error);
+        console.error("Erro inesperado:", error);
         toast({
           variant: "destructive",
           title: "Erro ao enviar mensagem",
