@@ -62,10 +62,13 @@ const stores = [
 ];
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, "Nome é obrigatório").max(100),
-  email: z.string().trim().email("Email inválido").max(255),
-  phone: z.string().trim().min(1, "Telefone é obrigatório"),
-  message: z.string().trim().min(1, "Mensagem é obrigatória").max(1000),
+  name: z.string().trim().min(2, "Nome deve ter pelo menos 2 caracteres").max(100, "Nome deve ter no máximo 100 caracteres"),
+  email: z.string().trim().email("E-mail inválido").max(255, "E-mail deve ter no máximo 255 caracteres"),
+  phone: z.string().trim().min(10, "Telefone deve ter pelo menos 10 caracteres").max(20, "Telefone deve ter no máximo 20 caracteres"),
+  message: z.string().trim().min(10, "Mensagem deve ter pelo menos 10 caracteres").max(1000, "Mensagem deve ter no máximo 1000 caracteres"),
+  privacyAccepted: z.boolean().refine((val) => val === true, {
+    message: "Você deve aceitar a política de privacidade",
+  }),
 });
 
 const Contato = () => {
@@ -76,6 +79,7 @@ const Contato = () => {
     email: "",
     phone: "",
     message: "",
+    privacyAccepted: false,
   });
 
   const structuredData = {
@@ -193,14 +197,26 @@ const Contato = () => {
         body: formData,
       });
 
-      if (error) throw error;
+      if (error) {
+        // Check if it's a validation error from the server
+        if (data?.details?.length > 0) {
+          toast({
+            variant: "destructive",
+            title: "Erro de validação",
+            description: data.details[0].message,
+          });
+        } else {
+          throw error;
+        }
+        return;
+      }
 
       toast({
         title: "Mensagem enviada com sucesso!",
         description: "Recebemos sua mensagem e entraremos em contato em breve.",
       });
 
-      setFormData({ name: "", email: "", phone: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", message: "", privacyAccepted: false });
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
@@ -301,6 +317,28 @@ const Contato = () => {
                     />
                   </div>
 
+                  <div className="flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="privacyAccepted"
+                      checked={formData.privacyAccepted}
+                      onChange={(e) => setFormData({ ...formData, privacyAccepted: e.target.checked })}
+                      className="mt-1 w-4 h-4 text-primary border-border rounded focus:ring-2 focus:ring-primary cursor-pointer"
+                    />
+                    <label htmlFor="privacyAccepted" className="text-sm text-muted-foreground cursor-pointer">
+                      Li e aceito a{" "}
+                      <a 
+                        href="/politica-privacidade" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline font-semibold"
+                      >
+                        Política de Privacidade
+                      </a>
+                      {" "}e concordo com o tratamento dos meus dados pessoais. *
+                    </label>
+                  </div>
+
                   <Button
                     type="submit"
                     variant="gradient"
@@ -309,7 +347,7 @@ const Contato = () => {
                     disabled={isSubmitting}
                   >
                     <MessageCircle className="mr-2 h-5 w-5" />
-                    {isSubmitting ? "Enviando..." : "Enviar via WhatsApp"}
+                    {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                   </Button>
                 </form>
               </CardContent>
