@@ -67,7 +67,7 @@ export const Navigation = () => {
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className={cn("flex items-center justify-between transition-all duration-300", scrolled ? "h-14 lg:h-16" : "h-20 lg:h-24")}>
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center group">
