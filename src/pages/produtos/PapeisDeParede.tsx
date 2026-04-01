@@ -14,8 +14,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Check, Phone } from "lucide-react";
-import wallpaperImage from "@/assets/products-curtains.jpg";
-
+import wallpaper01 from "@/assets/wallpaper_01.webp";
+import wallpaper02 from "@/assets/wallpaper_02.webp";
+import wallpaper03 from "@/assets/wallpaper_03.webp";
+import wallpaper04 from "@/assets/wallpaper_04.webp";
+import wallpaper05 from "@/assets/wallpaper_05.webp";
+import wallpaper06 from "@/assets/wallpaper_06.webp";
+import wallpaper07 from "@/assets/wallpaper_07.webp";
+import wallpaper08 from "@/assets/wallpaper_08.webp";
+import wallpaper09 from "@/assets/wallpaper_09.webp";
+import wallpaper10 from "@/assets/wallpaper_10.webp";
 const PapeisDeParede = () => {
   const structuredData = {
     "@context": "https://schema.org",
@@ -74,8 +82,8 @@ const PapeisDeParede = () => {
   };
 
   const images = [
-    wallpaperImage,
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/persiana-horizontal-YNqrO0B2Ejh9npp3.webp"
+    wallpaper01, wallpaper02, wallpaper03, wallpaper04, wallpaper05,
+    wallpaper06, wallpaper07, wallpaper08, wallpaper09, wallpaper10,
   ];
 
   const features = [
