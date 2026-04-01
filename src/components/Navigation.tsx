@@ -101,10 +101,10 @@ export const Navigation = () => {
                           <NavigationMenuLink asChild>
                             <a
                               href={product.href}
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground"
+                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent group/link"
                             >
-                              <div className="text-sm font-medium leading-none">{product.title}</div>
-                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                              <div className="text-sm font-medium leading-none group-hover/link:text-white group-hover/link:font-bold">{product.title}</div>
+                              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover/link:text-white/80">
                                 {product.description}
                               </p>
                             </a>
