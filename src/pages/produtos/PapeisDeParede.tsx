@@ -82,8 +82,8 @@ const PapeisDeParede = () => {
   };
 
   const images = [
-    wallpaperImage,
-    "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=606,h=384,fit=crop/YBg4lPQqvZhrZpja/persiana-horizontal-YNqrO0B2Ejh9npp3.webp"
+    wallpaper01, wallpaper02, wallpaper03, wallpaper04, wallpaper05,
+    wallpaper06, wallpaper07, wallpaper08, wallpaper09, wallpaper10,
   ];
 
   const features = [
