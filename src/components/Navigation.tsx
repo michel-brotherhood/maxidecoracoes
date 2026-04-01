@@ -74,7 +74,7 @@ export const Navigation = () => {
               <img 
                 src={logoMaxi} 
                 alt="Maxi Decorações" 
-                className="h-10 sm:h-12 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+                className={cn("w-auto transition-all duration-300 group-hover:scale-105", scrolled ? "h-8 sm:h-9 lg:h-10" : "h-10 sm:h-12 lg:h-14")}
               />
             </a>
           </div>
